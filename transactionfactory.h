@@ -33,7 +33,7 @@ class TransactionFactory {
 
 		------------------------------------------------------------------------------------------------*/
 
-		static Transaction* createTransaction(ifstream& inFile, queue<Transaction>);		//creates new Transaction objects
+		static bool createTransaction(ifstream& inFile, queue<Transaction>);		//creates new Transaction objects
 };
 
 #endif

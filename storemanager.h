@@ -22,6 +22,9 @@ INVARIANTS:
 #include "dvd.h"
 #include "customer.h"
 #include "binarysearchtree.h"
+#include "customerfactory.h"
+#include "transactionfactory.h"
+#include "dvdfactory.h"
 
 
 using namespace std;
@@ -47,7 +50,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setCustomers(ifstream& inFile);
+	bool setCustomers(ifstream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 	Method takes in a file stream and passes the file stream to the inventory vector. The
@@ -61,7 +64,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setInventory(ifstream& inFile);
+	bool setInventory(ifstream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 	Method takes in a file stream and passes the file stream to  a factory class used to create
@@ -74,14 +77,14 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setTransactions(ifstream& inFile);
+	bool setTransactions(ifstream& infile);
 
 private:
 
-	HashTable<Customer>* customers = nullptr;									//HashTable to store customers
+	HashTable<Customer> customers;									//HashTable to store customers
 	vector<BinarySearchTree<DVD>*> inventory;						//vector holding pointers to inventory sets
-	queue<Transaction>* pending = nullptr;							//queue of Transaction to be completed
-	queue<Transaction>* completed = nullptr;						//queue of completed Transactions
+	queue<Transaction> pending;							//queue of Transaction to be completed
+	queue<Transaction> completed;						//queue of completed Transactions
 
 };
 

@@ -49,7 +49,7 @@ class DVDFactory {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void createTransactions(ifstream& inFile, vector<BinarySearchTree<DVD>*> inventory);
+	static bool createTransactions(ifstream& infile, vector<BinarySearchTree<DVD>*> inventory);
 
 };
 
