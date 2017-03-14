@@ -1,9 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Boyer, Destiny
-					Bushey, Luke
+	Authors:		Bushey, Luke
 					King, Garret
-					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
@@ -23,12 +21,11 @@
 #define dvd_h
 
 #include <string>
-#include "media.h"
 #include "date.h"
 
 using namespace std;
 
-class DVD : public Media {
+class DVD {
 
 	public:
 
@@ -119,7 +116,7 @@ class DVD : public Media {
 	string title = "";
 	string director = "";
 	int inventory = 0;
-	Date* date = nullptr;
+	Date* date = NULL;
 
 };
 
