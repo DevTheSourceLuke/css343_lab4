@@ -39,6 +39,8 @@ class StoreManager {
 	~StoreManager(void);		//default destructor
 
 
+	void processTransactions();
+
 	/*------------------------------------------------------------------------------------------------
 
 		Method takes in a file stream and passes the file stream to the customers HashTable
@@ -97,9 +99,11 @@ class StoreManager {
 
 	private:
 	
-	HashTable* customers = nullptr;									//HashTable to store customers
+	HashTable<Customer>* customers = nullptr;									//HashTable to store customers
 	vector<BinarySearchTree<DVD>*> inventory;						//vector holding pointers to inventory sets
 	queue<Transaction>* pending = nullptr;							//queue of Transaction to be completed
 	queue<Transaction>* completed = nullptr;						//queue of completed Transactions
 	
 };
+
+#endif
