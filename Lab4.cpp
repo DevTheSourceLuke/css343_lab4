@@ -1,12 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
-
 Authors:
-			Bushey, Luke
-			King, Garret
-
+Bushey, Luke
+King, Garret
 Created:		3/13/2017
 Modified:		3/13/2017
-
 -------------------------------------------------------------------------------------------------*/
 
 #include "stdafx.h"
@@ -30,7 +27,7 @@ int main() {
 		cout << "Inventory file could not be opened." << endl;
 		return 1;
 	}
-	
+
 	ifstream infileCom("data4commands.txt");
 	if (!infileCom) {
 		cout << "Transaction file could not be opened." << endl;
@@ -44,7 +41,6 @@ int main() {
 	Store.setTransactions(infileCom);
 
 	Store.processTransactions();
-	
+
 	return 0;
 }
-

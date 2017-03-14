@@ -91,6 +91,12 @@ class Transaction {
 	
 	char transactionType = '';
 	int customerID = 0;
+	char mediaType = '';
+	char genre = '';
+	string director = "";
+	string title = "";
+	string actorFirstName = "";
+	string actorLastName = "";
 };
 
 #endif // !transaction_h
