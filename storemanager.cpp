@@ -1,20 +1,37 @@
 #include "stdafx.h"
 #include "storemanager.h"
 
+StoreManager::StoreManager(void)
+{
+
+}
+
+StoreManager::~StoreManager(void)
+{
+
+}
+
+void StoreManager::processTransactions()
+{
+	while (pending.size() != 0)
+	{
+		pending.front().processTransaction();
+		completed.push(pending.front());
+		pending.pop();
+	}
+}
+
 bool StoreManager::setCustomers(ifstream & infile)
 {
-	CustomerFactory cf;
-	return cf.createCustomer(infile, customers);
+	return CustomerFactory::createCustomer(infile, customers);
 }
 
 bool StoreManager::setInventory(ifstream & infile)
 {
-	DVDFactory df;
-	return df.createTransactions(infile, inventory);
+	return DVDFactory::createTransactions(infile, inventory);
 }
 
 bool StoreManager::setTransactions(ifstream & infile)
 {
-	TransactionFactory tf;
-	return tf.createTransaction(infile, pending);
+	return TransactionFactory::createTransaction(infile, pending);
 }
