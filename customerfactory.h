@@ -30,7 +30,7 @@ public:
 
 	------------------------------------------------------------------------------------------------*/
 
-	static bool createCustomer(ifstream& inFile, HashTable<Customer> customers);	//creates new Transaction objects
+	static bool createCustomer(ifstream& inFile, HashTable<Customer>& customers);	//creates new Transaction objects
 };
 
 #endif

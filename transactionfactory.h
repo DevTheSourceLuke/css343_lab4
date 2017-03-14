@@ -33,7 +33,7 @@ class TransactionFactory {
 
 		------------------------------------------------------------------------------------------------*/
 
-		static bool createTransaction(ifstream& inFile, queue<Transaction>);		//creates new Transaction objects
+		static bool createTransaction(ifstream& infile, queue<Transaction>& pending, HashTable<Customer>& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
 };
 
 #endif

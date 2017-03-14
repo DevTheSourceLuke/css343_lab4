@@ -33,5 +33,5 @@ bool StoreManager::setInventory(ifstream & infile)
 
 bool StoreManager::setTransactions(ifstream & infile)
 {
-	return TransactionFactory::createTransaction(infile, pending);
+	return TransactionFactory::createTransaction(infile, pending, customers, inventory);
 }
