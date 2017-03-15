@@ -13,9 +13,9 @@ Customer::~Customer(void)
 
 bool Customer::setData(ifstream & infile)
 {
-	int ID = 0;
+	int ID = -1;
 	string first, last = "";
-	infile >> ID >> first >> last;
+	infile >> ID >> last >> first;
 	if (setID(ID) != true || setFirstName(first) != true || setLastName(last) != true)
 	{
 		cout << "Customer not created." << endl;
@@ -111,7 +111,7 @@ bool Customer::setID(int input)
 	}
 	else
 	{
-		cout << "Invalud ID: " << input << endl;
+		cout << "Invalid ID: " << input << endl;
 		return false;
 	}
 }
