@@ -65,27 +65,75 @@ void HashTable::emptyTable(void)
 bool HashTable::insertCustomer(Customer* custToInsert)
 {
 	// retrieve CustID
-	int custKey = custToInsert->getID;
+	int custID = custToInsert->getID;
 	
 	// create hashKey
-	int hashKey = (custKey % tableHash);
+	int hashKey = (custID % tableHash);
 
 	// create hash node to insert
 	hashItems* newCust = new hashItems;
 	newCust->custRecord = custToInsert;
 	newCust->next = NULL;
 	
+	// test if any nodes exist at hashKey 
 	if (table[hashKey].head == NULL)
 	{
-		//newCust->next = 
+		// not then set start of list
+		table[hashKey].head = newCust;
 	}
+	else {
+		// list exists, traverse to end and insert customer
+		hashItems* current = table[hashKey].head;
 
-
+		// iterate through list
+		while (current->next != NULL)
+		{
+			if (custID == current->custRecord->getID)
+			{
+				cout << "Duplicate Customer ID already exists: " << custID <<  endl;
+				// if we have mem leaks then look to delete cust record here
+				//delete newCust->custRecord;
+				newCust->custRecord = NULL;
+				delete newCust;
+				newCust = NULL;
+				return false;
+			}
+			// iterate through list
+			current = current->next;
+		}
+		// finally set the next to point to the new node
+		current->next = newCust;
+	}
+	return true;
 }
 
-Customer * HashTable::getCustomer(int custID)
+Customer* HashTable::getCustomer(int custID)
 {
+	if (custID > 999 || custID < 10000)
+	{
+		return NULL;
+	}
 
+	// create hashKey
+	int hashKey = (custID % tableHash);
+
+	if (table[hashKey].head == NULL) 
+	{
+		return NULL;
+	}
+	else {
+		hashItems* current = table[hashKey].head;
+
+		while (current != NULL) 
+		{
+			if (custID == current->custRecord->getID) 
+			{
+				return current->custRecord;
+			}
+			current = current->next;
+		}
+	}
+	return NULL;
 }
 
 
