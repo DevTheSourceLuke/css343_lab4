@@ -95,7 +95,25 @@ void transactionReturn::passStructures(HashTable * c, vector<BinarySearchTree<DV
 
 void transactionReturn::displayTransaction(void) const
 {
-	cout << "This is a transaction!!!" << endl;
+	cout << getTransactionType() << " " << getCustomerID() << " " << getMediaType() << " " << getGenre() << " ";
+	switch (getGenre())
+	{
+	case 'F':
+		cout << getTitle() << " " << getYear() << endl;
+		break;
+
+	case 'D':
+		cout << getDirector() << " " << getTitle() << endl;
+		break;
+
+	case 'C':
+		cout << getTitle() << " " << getMonth() << " " << getYear() << endl;
+		break;
+
+	default:
+		cout << "Invalid Genre." << endl;
+		break;
+	}
 }
 
 void transactionReturn::processTransaction(void)

@@ -35,6 +35,8 @@ public:
 	void processTransaction(void);
 
 	//getters
+	int getMonth(void) const;
+	int getYear(void) const;
 	int getCustomerID(void) const;
 	char getMediaType(void) const;
 	char getGenre(void) const;

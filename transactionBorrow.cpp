@@ -95,12 +95,40 @@ void transactionBorrow::passStructures(HashTable * c, vector<BinarySearchTree<DV
 
 void transactionBorrow::displayTransaction(void) const
 {
-	cout << "This is a transaction!!!" << endl;
+	cout << getTransactionType() << " " << getCustomerID() << " " << getMediaType() << " " << getGenre() << " ";
+	switch (getGenre())
+	{
+	case 'F':
+		cout << getTitle() << " " << getYear() << endl;
+		break;
+
+	case 'D':
+		cout << getDirector() << " " << getTitle() << endl;
+		break;
+
+	case 'C':
+		cout << getTitle() << " " << getMonth() << " " << getYear() << endl;
+		break;
+
+	default:
+		cout << "Invalid Genre." << endl;
+		break;
+	}
 }
 
 void transactionBorrow::processTransaction(void)
 {
 	cout << "Processing....." << endl;
+}
+
+int transactionBorrow::getMonth(void) const
+{
+	return month;
+}
+
+int transactionBorrow::getYear(void) const
+{
+	return year;
 }
 
 int transactionBorrow::getCustomerID(void) const
