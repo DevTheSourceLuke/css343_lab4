@@ -2,7 +2,7 @@
 #include <iostream>
 #include "customerfactory.h"
 
-bool CustomerFactory::createCustomer(ifstream & infile, HashTable& customers)
+void CustomerFactory::createCustomer(ifstream & infile, HashTable& customers)
 {
 	Customer* temp = NULL;
 	while (!infile.eof())
@@ -10,7 +10,11 @@ bool CustomerFactory::createCustomer(ifstream & infile, HashTable& customers)
 		temp = new Customer();
 		if (temp->setData(infile))
 		{
-			customers.insert(temp);
+			if (!customers.insert(temp))
+			{
+				delete temp;
+				temp = NULL;
+			}
 			temp = NULL;
 		}
 		else
@@ -19,5 +23,4 @@ bool CustomerFactory::createCustomer(ifstream & infile, HashTable& customers)
 			temp = NULL;
 		}
 	}
-	return false;
 }

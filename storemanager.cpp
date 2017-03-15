@@ -22,17 +22,17 @@ void StoreManager::processTransactions()
 	}
 }
 
-bool StoreManager::setCustomers(ifstream & infile)
+void StoreManager::setCustomers(ifstream & infile)
 {
-	return CustomerFactory::createCustomer(infile, customers);
+	CustomerFactory::createCustomer(infile, customers);
 }
 
-bool StoreManager::setInventory(ifstream & infile)
+void StoreManager::setInventory(ifstream & infile)
 {
-	return DVDFactory::createDVDs(infile, inventory);
+	DVDFactory::createDVDs(infile, inventory);
 }
 
-bool StoreManager::setTransactions(ifstream & infile)
+void StoreManager::setTransactions(ifstream & infile)
 {
-	return TransactionFactory::createTransaction(infile, pending, customers, inventory);
+	TransactionFactory::createTransaction(infile, pending, customers, inventory);
 }

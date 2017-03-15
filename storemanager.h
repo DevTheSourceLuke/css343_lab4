@@ -50,7 +50,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setCustomers(ifstream& infile);
+	void setCustomers(ifstream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 	Method takes in a file stream and passes the file stream to the inventory vector. The
@@ -64,7 +64,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setInventory(ifstream& infile);
+	void setInventory(ifstream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 	Method takes in a file stream and passes the file stream to  a factory class used to create
@@ -77,7 +77,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	bool setTransactions(ifstream& infile);
+	void setTransactions(ifstream& infile);
 
 private:
 
