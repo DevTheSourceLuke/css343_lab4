@@ -30,7 +30,8 @@ public:
 	~transactionBorrow(void);							//destructor
 
 	bool setData(ifstream& infile);
-	void passStructures(HashTable* c, vector<BinarySearchTree<DVD>*>* i);
+	virtual void passInventory(vector<BinarySearchTree<DVD>*>* i);
+	virtual void passCustomers(HashTable* c);
 	void displayTransaction(void) const;
 	void processTransaction(void);
 

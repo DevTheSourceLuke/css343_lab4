@@ -24,6 +24,14 @@ void Transaction::displayTransaction(void) const
 	cout << transactionType << endl;
 }
 
+void Transaction::passInventory(vector<BinarySearchTree<DVD>*>* i)
+{
+}
+
+void Transaction::passCustomers(HashTable * c)
+{
+}
+
 char Transaction::getTransactionType(void) const
 {
 	return transactionType;

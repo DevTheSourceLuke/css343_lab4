@@ -87,10 +87,14 @@ bool transactionBorrow::setData(ifstream & infile)
 	}
 }
 
-void transactionBorrow::passStructures(HashTable * c, vector<BinarySearchTree<DVD>*>* i)
+void transactionBorrow::passInventory(vector<BinarySearchTree<DVD>*>* i)
+{
+	inventory = i;
+}
+
+void transactionBorrow::passCustomers(HashTable * c)
 {
 	customers = c;
-	inventory = i;
 }
 
 void transactionBorrow::displayTransaction(void) const
@@ -101,6 +105,16 @@ void transactionBorrow::displayTransaction(void) const
 void transactionBorrow::processTransaction(void)
 {
 	cout << "Processing....." << endl;
+}
+
+int transactionBorrow::getMonth(void) const
+{
+	return month;
+}
+
+int transactionBorrow::getYear(void) const
+{
+	return year;
 }
 
 int transactionBorrow::getCustomerID(void) const

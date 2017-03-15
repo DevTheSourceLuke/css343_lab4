@@ -22,6 +22,10 @@
 
 #include <fstream>
 #include <iostream>
+#include <vector>
+#include "binarysearchtree.h"
+#include "dvd.h"
+#include "hashtable.h"
 
 using namespace std;
 
@@ -54,6 +58,8 @@ public:
 	------------------------------------------------------------------------------------------------*/
 
 	virtual void displayTransaction(void) const;	
+	virtual void passInventory(vector<BinarySearchTree<DVD>*>* i);
+	virtual void passCustomers(HashTable* c);
 
 	//getters
 	char getTransactionType(void) const;
