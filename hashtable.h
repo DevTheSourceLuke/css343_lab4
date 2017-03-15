@@ -33,8 +33,8 @@ public:
 	HashTable(void);					// default no-args constructor
 	~HashTable(void);					// destructor
 
-	Customer* getCustomer(int) const;					// method uses customer id and returns a pointer to that customer obj.
-	bool insertCustomer(Customer*);		// method to populate customer into hash table.
+	Customer* getCustomer(int);					// method uses customer id and returns a pointer to that customer obj.
+	bool insertCustomer(Customer* );		// method to populate customer into hash table.
 
 private:
 	void createTable();						    // method for constructor to create table

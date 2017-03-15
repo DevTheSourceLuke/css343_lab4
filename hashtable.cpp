@@ -20,7 +20,7 @@ is the responsibility of the Object.
 // Constructor and destructor for hash table
 HashTable::HashTable(void)
 {
-	buildTable();
+	createTable();
 }
 
 HashTable::~HashTable(void)
@@ -62,12 +62,28 @@ void HashTable::emptyTable(void)
 	}
 }
 
-bool HashTable::insertCustomer(Customer* custToInsert) const
+bool HashTable::insertCustomer(Customer* custToInsert)
 {
+	// retrieve CustID
+	int custKey = custToInsert->getID;
+	
+	// create hashKey
+	int hashKey = (custKey % tableHash);
+
+	// create hash node to insert
+	hashItems* newCust = new hashItems;
+	newCust->custRecord = custToInsert;
+	newCust->next = NULL;
+	
+	if (table[hashKey].head == NULL)
+	{
+		//newCust->next = 
+	}
+
 
 }
 
-Customer* HashTable::getCustomer(int custID)
+Customer * HashTable::getCustomer(int custID)
 {
 
 }
