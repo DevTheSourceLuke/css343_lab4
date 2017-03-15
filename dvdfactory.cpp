@@ -1,114 +1,75 @@
 #include "stdafx.h"
-#include "DVDClassic.h"
+#include <iostream>
+#include "dvdfactory.h"
 
-Classic::Classic(void)
+void DVDFactory::createDVDs(ifstream & infile, vector<BinarySearchTree<DVD>*> inventory)
 {
-}
-
-Classic::~Classic(void)
-{
-}
-
-bool Classic::setData(ifstream & infile)
-{
-	int stock, year, month;
-	string director, actor, title;
-
-	infile.ignore(1);
-	infile >> stock;
-	infile.ignore(1);
-	getline(infile, director, ',');
-	getline(infile, director,)
-}
-
-void Classic::display(void) const
-{
-	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getActor() << ", " << getYear() << ", " << getMonth() << ", " << getInventory();
-}
-
-string Classic::getActor(void) const
-{
-	return majorActor;
-}
-
-int Classic::getMonth(void) const
-{
-	return releaseMonth;
-}
-
-bool Classic::operator==(const DVD & toCompare) const
-{
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0 
-		&& getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
-}
-
-bool Classic::operator!=(const DVD & toCompare) const
-{
-	return !(*this == toCompare);
-}
-
-bool Classic::operator<(const DVD & toCompare) const
-{
-	if (getYear() < toCompare.getYear())
+	DVD* temp = NULL;
+	while (!infile.eof())
 	{
-		return true;
-	}
-	else if (getYear() == toCompare.getYear())
-	{
-		if (getMonth() < toCompare.getMonth())
+		char genre;
+
+		infile >> genre;
+		switch (genre)
 		{
-			return true;
-		}
-		else if (getMonth() == toCompare.getMonth())
-		{
-			if (getActor().compare(toCompare.getActor()) < 0)
+		case 'F':
+			temp = new Comedy();
+			if (temp->setData(infile))
 			{
-				return true;
+				if (inventory[0]->insert(temp))
+				{
+					delete temp;
+					temp = NULL;
+				}
+				temp = NULL;
 			}
 			else
 			{
-				return false;
+				delete temp;
+				temp = NULL;
 			}
+			break;
+
+		case 'D':
+			temp = new Drama();
+			if (temp->setData(infile))
+			{
+				if (inventory[1]->insert(temp))
+				{
+					delete temp;
+					temp = NULL;
+				}
+				temp = NULL;
+			}
+			else
+			{
+				delete temp;
+				temp = NULL;
+			}
+			break;
+
+		case 'C':
+			temp = new Classic();
+			if (temp->setData(infile))
+			{
+				if (inventory[0]->insert(temp))
+				{
+					delete temp;
+					temp = NULL;
+				}
+				temp = NULL;
+			}
+			else
+			{
+				delete temp;
+				temp = NULL;
+			}
+			break;
+
+		default:
+			cout << "Invalid Movie Genre: " << genre << endl;
+			infile.ignore(1000000, '\n');
+			break;
 		}
-		else
-		{
-			return false;
-		}
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool Classic::operator>(const DVD & toCompare) const
-{
-	return false;
-}
-
-bool Classic::setActor(string input)
-{
-	if (input.length() > 0)
-	{
-		majorActor = input;
-		return true;
-	}
-	else
-	{
-		cout << "Empty Actor" << endl;
-	}
-}
-
-bool Classic::setMonth(int input)
-{
-	if (input > 0 && input < 13)
-	{
-		releaseMonth = input;
-		return true;
-	}
-	else
-	{
-		cout << "Invalid Month: " << input << endl;
-		return false;
 	}
 }
