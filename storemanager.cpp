@@ -8,7 +8,24 @@ StoreManager::StoreManager(void)
 
 StoreManager::~StoreManager(void)
 {
+	customers.~HashTable();
+	while (!pending.empty())
+	{
+		pending.pop();
+	}
 
+	while (!completed.empty())
+	{
+		completed.pop();
+	}
+
+	for (int i = 0; i < inventory.size(); i++)
+	{
+		inventory[i]->~BinarySearchTree();
+		delete inventory[i];
+		inventory[i] = NULL;
+	}
+	inventory.clear();
 }
 
 void StoreManager::processTransactions()
