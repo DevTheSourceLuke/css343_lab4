@@ -26,8 +26,8 @@ class Transaction {
 
 	public:
 	
-	virtual Transaction(void);							//deafult no-args constructor
-	virtual Transaction(const Transaction& tocopy);		//copy constructor
+	Transaction(void);							//deafult no-args constructor
+	Transaction(const Transaction& tocopy);		//copy constructor
 	virtual ~Transaction(void);							//destructor
 	
 	/*------------------------------------------------------------------------------------------------
@@ -39,8 +39,9 @@ class Transaction {
 
 	------------------------------------------------------------------------------------------------*/
 
+	virtual void processTransaction();
 
-	virtual setData(ifstream& inFile, char type);
+	virtual bool setData(ifstream& inFile, char type);
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -50,7 +51,7 @@ class Transaction {
 
 	------------------------------------------------------------------------------------------------*/
 
-	virtual displayTransaction(void) const;	
+	virtual void displayTransaction(void) const;	
 
 	//getters
 	int getCustomerID(void) const;
@@ -89,10 +90,10 @@ class Transaction {
 
 	private:
 	
-	char transactionType = '';
+	char transactionType = '_';
 	int customerID = 0;
-	char mediaType = '';
-	char genre = '';
+	char mediaType = '_';
+	char genre = '_';
 	string director = "";
 	string title = "";
 	string actorFirstName = "";
