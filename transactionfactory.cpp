@@ -6,28 +6,54 @@ void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*
 {	
 	cout << "Make transactions." << endl;
 	Transaction* temp = NULL;
-
 	
-		while (!infile.eof())
+	while (!infile.eof())
+	{
+		char transactionType;
+		infile >> transactionType;
+
+		switch (transactionType)
 		{
-			char transactionType;
-
-			infile >> transactionType;
-
-			switch (transactionType) 
+		case 'I':
+			temp = new transactionInventory();
+			if (temp->setData(infile))
 			{
-			case 'I':
-				temp = new transactionInventory();
-				if(temp->setData(infile))
-				{
-					pending.push(temp);					
-				}	
+				pending.push(temp);
 			}
-		
+			temp = NULL;
+			break;
 
+		case 'H':
+			temp = new transactionHistory();
+			if (temp->setData(infile))
+			{
+				pending.push(temp);
+			}
+			temp = NULL;
+			break;
 
+		case 'B':
+			temp = new transactionBorrow();
+			if (temp->setData(infile))
+			{
+				pending.push(temp);
+			}
+			temp = NULL;
+			break;
+
+		case 'R':
+			temp = new transactionReturn();
+			if (temp->setData(infile))
+			{
+				pending.push(temp);
+			}
+			temp = NULL;
+			break;
+
+		default:
+			cout << "Invalid Transaction: " << transactionType << endl;
+			infile.ignore(1000000, '\n');
+			break;
+		}
 	}
-
-
-
 }
