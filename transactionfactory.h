@@ -40,7 +40,7 @@ class TransactionFactory {
 
 		------------------------------------------------------------------------------------------------*/
 
-		static void createTransaction(ifstream& infile, queue<Transaction*> pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
+		static void createTransaction(ifstream& infile, queue<Transaction*>& pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
 };
 
 #endif
