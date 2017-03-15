@@ -10,13 +10,14 @@ void DVDFactory::createDVDs(ifstream & infile, vector<BinarySearchTree<DVD>*> in
 		char genre;
 
 		infile >> genre;
+
 		switch (genre)
 		{
 		case 'F':
 			temp = new Comedy();
 			if (temp->setData(infile))
 			{
-				if (inventory[0]->insert(temp))
+				if (!inventory[0]->insert(temp))
 				{
 					delete temp;
 					temp = NULL;
@@ -34,7 +35,7 @@ void DVDFactory::createDVDs(ifstream & infile, vector<BinarySearchTree<DVD>*> in
 			temp = new Drama();
 			if (temp->setData(infile))
 			{
-				if (inventory[1]->insert(temp))
+				if (!inventory[1]->insert(temp))
 				{
 					delete temp;
 					temp = NULL;
@@ -52,7 +53,7 @@ void DVDFactory::createDVDs(ifstream & infile, vector<BinarySearchTree<DVD>*> in
 			temp = new Classic();
 			if (temp->setData(infile))
 			{
-				if (inventory[0]->insert(temp))
+				if (!inventory[2]->insert(temp))
 				{
 					delete temp;
 					temp = NULL;

@@ -95,7 +95,36 @@ bool Classic::operator<(const DVD & toCompare) const
 
 bool Classic::operator>(const DVD & toCompare) const
 {
-	return false;
+	if (getYear() > toCompare.getYear())
+	{
+		return true;
+	}
+	else if (getYear() == toCompare.getYear())
+	{
+		if (getMonth() > toCompare.getMonth())
+		{
+			return true;
+		}
+		else if (getMonth() == toCompare.getMonth())
+		{
+			if (getActor().compare(toCompare.getActor()) < 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }
 
 bool Classic::setActor(string input)

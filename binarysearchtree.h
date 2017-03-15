@@ -20,8 +20,8 @@ private:
 		Node* left;
 		Node* right;
 
-		Node(void) : data(nullptr), left(nullptr), right(nullptr) {};
-		Node(NodeData* d) : data(d), left(nullptr), right(nullptr) {};
+		Node(void) : data(NULL), left(NULL), right(NULL) {};
+		Node(NodeData* d) : data(d), left(NULL), right(NULL) {};
 		Node(NodeData* d, Node* l, Node* r) : data(d), left(l), right(r) {};
 	};
 
@@ -39,7 +39,7 @@ public:
 
 private:
 
-	Node* root = nullptr;
+	Node* root = NULL;
 
 	Node* insertHelper(Node* current, NodeData* toInsert);
 	void clearHelper(Node* current);
