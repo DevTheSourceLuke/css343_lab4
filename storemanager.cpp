@@ -29,6 +29,10 @@ void StoreManager::setCustomers(ifstream & infile)
 
 void StoreManager::setInventory(ifstream & infile)
 {
+	inventory.resize(3);
+	inventory[0] = new BinarySearchTree<DVD>();
+	inventory[1] = new BinarySearchTree<DVD>();
+	inventory[2] = new BinarySearchTree<DVD>();
 	DVDFactory::createDVDs(infile, inventory);
 }
 
