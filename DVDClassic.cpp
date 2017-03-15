@@ -137,6 +137,7 @@ bool Classic::setActor(string input)
 	else
 	{
 		cout << "Empty Actor" << endl;
+		return false;
 	}
 }
 

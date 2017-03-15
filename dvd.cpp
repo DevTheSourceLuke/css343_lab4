@@ -66,6 +66,7 @@ bool DVD::setTitle(string input)
 	else
 	{
 		cout << "Empty Title" << endl;
+		return false;
 	}
 }
 
@@ -79,6 +80,7 @@ bool DVD::setDirector(string input)
 	else
 	{
 		cout << "Empty Director" << endl;
+		return false;
 	}
 }
 
@@ -106,6 +108,7 @@ bool DVD::adjustInventory(int input)
 	else
 	{
 		cout << "Inventory for " << getTitle() << " would be " << inventory + input << endl;
+		return false;
 	}
 }
 
