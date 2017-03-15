@@ -41,7 +41,7 @@ public:
 
 	------------------------------------------------------------------------------------------------*/
 
-	virtual bool setData(ifstream& infile, char type);
+	virtual bool setData(ifstream& infile);
 
 	virtual void processTransaction();
 

@@ -14,7 +14,7 @@ void Transaction::processTransaction()
 {
 }
 
-bool Transaction::setData(ifstream & infile, char type)
+bool Transaction::setData(ifstream & infile)
 {
 }
 
