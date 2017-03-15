@@ -9,9 +9,27 @@ Classic::~Classic(void)
 {
 }
 
-bool Classic::setData(ifstream & inFile)
+bool Classic::setData(ifstream & infile)
 {
-	return false;
+	int stock, year, month;
+	string director, first, last, title;
+
+	infile.ignore(1);
+	infile >> stock;
+	infile.ignore(1);
+	getline(infile, director, ',');
+	getline(infile, title, ',');
+	infile >> first >> last >> month >> year;
+
+	if (setActor(first + " " + last) == true && setDirector(director) == true && setMonth(month) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
+	{
+		return true;
+	}
+	else
+	{
+		cout << "Classic DVD not created." << endl;
+		return false;
+	}
 }
 
 void Classic::display(void) const
@@ -31,7 +49,7 @@ int Classic::getMonth(void) const
 
 bool Classic::operator==(const DVD & toCompare) const
 {
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0 
+	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0
 		&& getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
 }
 

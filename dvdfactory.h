@@ -8,49 +8,72 @@
 	Created:		2/21/2017
 	Modified:		3/1/2017
 
-	DVDFactory is an abstract class used to populate a vector of BinarySearchTrees. Each index
-	in the vector corresponds with a distinct BinarySearchTree that holds DVD objects of one type.
-	DVDFactory creates DVD objects but it is the sole responsibility of the DVD objects to know
-	how to properly handle data in order to populate data members.
+	DVD child class to represent DVD's of type Classic. Classic DVD objects are a special
+	case and require uniquely overloaded comparison operators for insertion into the 
+	inventory management data structure and for populating data members.
 
 -------------------------------------------------------------------------------------------------*/
 
 #pragma once
-#ifndef dvdfactory_h
-#define dvdfactory_h
+#ifndef classic_h
+#define classic_h
 
-#include <iostream>
-#include <set>
-#include <vector>
+#include <fstream>
 #include "dvd.h"
-#include "hashtable.h"
-#include "binarysearchtree.h"
 
-using namespace std;
-
-class DVDFactory {
-
+class Classic : public DVD {
+	
 	public:
+
+	Classic(void);				//default no-args constructor
+	~Classic(void);				//destructor
+
+	bool setData(ifstream& infile);
+	void display(void) const;
+	string getActor(void) const;
+	int getMonth(void) const;
+
+	bool operator==(const DVD& toCompare) const;
+	bool operator!=(const DVD& toCompare) const;
+	bool operator<(const DVD& toCompare) const;
+	bool operator>(const DVD& toCompare) const;
+
+	
 
 	/*------------------------------------------------------------------------------------------------
 
-		Method takes in a file stream and a vector of BinarySearchTree pointers. The method creates
-		DVD objects based on the type of DVD read from the file stream and then inserts the object
-		into a BinarySearchTree that corresponds with that DVD type.
+		Setter method for releaseYear. Returns a bool indicating success.
 
 		PRECONDITIONS:
-			- data must be formatted for DVD objects
+			- input cannot be an empty string
 
 		POSTCONDITIONS:
-			- populates distinct sets based on the type of DVD's created
-
-		NOTES:	DVD objects are solely responsible for knowing how to handle data
-				in order to populate data members.
+			- sets actor equal to input
 
 	------------------------------------------------------------------------------------------------*/
 
-	static bool createDVDs(ifstream& infile, vector<BinarySearchTree<DVD>*> inventory);
+	bool setActor(string input);
+
+	/*------------------------------------------------------------------------------------------------
+
+		Setter method for releaseMonth. Returns a bool indicating success.
+
+		PRECONDITIONS:
+			- input cannot be less than 0 and greater than 12
+
+		POSTCONDITIONS:
+			- sets releaseMonth equal to the input
+
+	------------------------------------------------------------------------------------------------*/
+
+	bool setMonth(int input);
+
+
+	private:
+
+	string majorActor = "";
+	int releaseMonth = 0;
 
 };
 
-#endif // !dvdfactory_h
+#endif // !classic_h
