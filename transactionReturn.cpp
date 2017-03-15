@@ -95,25 +95,7 @@ void transactionReturn::passStructures(HashTable * c, vector<BinarySearchTree<DV
 
 void transactionReturn::displayTransaction(void) const
 {
-	cout << getTransactionType() << " " << getCustomerID() << " " << getMediaType() << " " << getGenre() << " ";
-	switch (getGenre())
-	{
-	case 'F':
-		cout << getTitle() << " " << getYear() << endl;
-		break;
-
-	case 'D':
-		cout << getDirector() << " " << getTitle() << endl;
-		break;
-
-	case 'C':
-		cout << getTitle() << " " << getMonth() << " " << getYear() << endl;
-		break;
-
-	default:
-		cout << "Invalid Genre." << endl;
-		break;
-	}
+	cout << "This is a transaction!!!" << endl;
 }
 
 void transactionReturn::processTransaction(void)
@@ -186,6 +168,7 @@ bool transactionReturn::setMediaType(char input)
 		cout << "Invalid Media Type: " << input << endl;
 		return false;
 	}
+	return true;
 }
 
 bool transactionReturn::setGenre(char input)
@@ -199,6 +182,7 @@ bool transactionReturn::setGenre(char input)
 		cout << "Invalid Movie Type: " << input << endl;
 		return false;
 	}
+	return true;
 }
 
 bool transactionReturn::setDirector(string input)

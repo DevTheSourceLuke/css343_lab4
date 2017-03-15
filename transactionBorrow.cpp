@@ -95,40 +95,12 @@ void transactionBorrow::passStructures(HashTable * c, vector<BinarySearchTree<DV
 
 void transactionBorrow::displayTransaction(void) const
 {
-	cout << getTransactionType() << " " << getCustomerID() << " " << getMediaType() << " " << getGenre() << " ";
-	switch (getGenre())
-	{
-	case 'F':
-		cout << getTitle() << " " << getYear() << endl;
-		break;
-
-	case 'D':
-		cout << getDirector() << " " << getTitle() << endl;
-		break;
-
-	case 'C':
-		cout << getTitle() << " " << getMonth() << " " << getYear() << endl;
-		break;
-
-	default:
-		cout << "Invalid Genre." << endl;
-		break;
-	}
+	cout << "This is a transaction!!!" << endl;
 }
 
 void transactionBorrow::processTransaction(void)
 {
 	cout << "Processing....." << endl;
-}
-
-int transactionBorrow::getMonth(void) const
-{
-	return month;
-}
-
-int transactionBorrow::getYear(void) const
-{
-	return year;
 }
 
 int transactionBorrow::getCustomerID(void) const
@@ -186,6 +158,7 @@ bool transactionBorrow::setMediaType(char input)
 		cout << "Invalid Media Type: " << input << endl;
 		return false;
 	}
+	return true;
 }
 
 bool transactionBorrow::setGenre(char input)
@@ -199,6 +172,7 @@ bool transactionBorrow::setGenre(char input)
 		cout << "Invalid Movie Type: " << input << endl;
 		return false;
 	}
+	return true;
 }
 
 bool transactionBorrow::setDirector(string input)
