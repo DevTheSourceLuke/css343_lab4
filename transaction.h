@@ -20,15 +20,17 @@
 #ifndef transaction_h
 #define transaction_h
 
+#include <fstream>
+#include <iostream>
+
 using namespace std;
 
 class Transaction {
 
-	public:
+public:
 	
-	Transaction(void);							//deafult no-args constructor
-	Transaction(const Transaction& tocopy);		//copy constructor
-	virtual ~Transaction(void);							//destructor
+	Transaction(void);							//default no-args constructor
+	virtual ~Transaction(void);					//destructor
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -39,10 +41,10 @@ class Transaction {
 
 	------------------------------------------------------------------------------------------------*/
 
+	virtual bool setData(ifstream& infile, char type);
+
 	virtual void processTransaction();
 
-	virtual bool setData(ifstream& inFile, char type);
-	
 	/*------------------------------------------------------------------------------------------------
 
 		Method neatly prints all of a Transaction object's information to the console.
@@ -54,23 +56,7 @@ class Transaction {
 	virtual void displayTransaction(void) const;	
 
 	//getters
-	int getCustomerID(void) const;
-	char getTransationType(void) const;
-
-	/*------------------------------------------------------------------------------------------------
-
-		Setter method for customerID. Returns a bool indicating success.
-
-		PRECONDITIONS:
-			- input must be greater than 999
-			- input must be less than 10000
-
-		POSTCONDITIONS:
-			- sets customerID to input
-
-	------------------------------------------------------------------------------------------------*/
-
-	bool setCustomerID(int input);
+	char getTransactionType(void) const;
 
 	/*------------------------------------------------------------------------------------------------
 
@@ -86,18 +72,10 @@ class Transaction {
 
 	bool setTransactionType(char input);
 
-	virtual Transaction& operator=(const Transaction& toCopy);
-
-	private:
+private:
 	
 	char transactionType = '_';
-	int customerID = 0;
-	char mediaType = '_';
-	char genre = '_';
-	string director = "";
-	string title = "";
-	string actorFirstName = "";
-	string actorLastName = "";
+	
 };
 
 #endif // !transaction_h
