@@ -18,7 +18,7 @@ bool DVD::setData(ifstream & inFile)
 
 void DVD::display(void) const
 {
-	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getYear() << ", " << getInventory();
+	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getYear() << ", " << getInventory() << endl;
 }
 
 string DVD::getTitle(void) const

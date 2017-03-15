@@ -10,6 +10,7 @@ void CustomerFactory::createCustomer(ifstream & infile, HashTable& customers)
 		temp = new Customer();
 		if (temp->setData(infile))
 		{
+
 			if (!customers.insertCustomer(temp))
 			{
 				delete temp;

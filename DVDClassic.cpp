@@ -35,7 +35,7 @@ bool Classic::setData(ifstream & infile)
 
 void Classic::display(void) const
 {
-	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getActor() << ", " << getYear() << ", " << getMonth() << ", " << getInventory();
+	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getActor() << ", " << getYear() << ", " << getMonth() << ", " << getInventory() << endl;
 }
 
 string Classic::getActor(void) const

@@ -22,7 +22,7 @@ bool Comedy::setData(ifstream & infile)
 	getline(infile, title, ',');
 	infile >> year;
 
-	if (true && setDirector(director) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
+	if (setDirector(director) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
 	{
 		return true;
 	}
