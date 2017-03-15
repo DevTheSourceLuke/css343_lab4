@@ -15,6 +15,7 @@ is the responsibility of the Object.
 -------------------------------------------------------------------------------------------------*/
 
 #pragma once
+#include "stdafx.h"
 #include "hashtable.h"
 
 // Constructor and destructor for hash table
@@ -65,7 +66,7 @@ void HashTable::emptyTable(void)
 bool HashTable::insertCustomer(Customer* custToInsert)
 {
 	// retrieve CustID
-	int custID = custToInsert->getID;
+	int custID = custToInsert->getID();
 	
 	// create hashKey
 	int hashKey = (custID % tableHash);
@@ -88,7 +89,7 @@ bool HashTable::insertCustomer(Customer* custToInsert)
 		// iterate through list
 		while (current->next != NULL)
 		{
-			if (custID == current->custRecord->getID)
+			if (custID == current->custRecord->getID())
 			{
 				cout << "Duplicate Customer ID already exists: " << custID <<  endl;
 				// if we have mem leaks then look to delete cust record here
@@ -126,7 +127,7 @@ Customer* HashTable::getCustomer(int custID)
 
 		while (current != NULL) 
 		{
-			if (custID == current->custRecord->getID) 
+			if (custID == current->custRecord->getID()) 
 			{
 				return current->custRecord;
 			}
@@ -135,5 +136,3 @@ Customer* HashTable::getCustomer(int custID)
 	}
 	return NULL;
 }
-
-
