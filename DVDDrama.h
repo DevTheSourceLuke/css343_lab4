@@ -23,8 +23,13 @@ class Drama : public DVD {
 	public:
 
 	Drama(void);				//default no-args constructor
-	Drama(Drama& toCopy);		//copy constructor
 	~Drama(void);				//destructor
+
+	//overloaded comparison operators
+	virtual bool operator==(const DVD& toCompare) const;
+	virtual bool operator!=(const DVD& toCompare) const;
+	virtual bool operator<(const DVD& toCompare) const;
+	virtual bool operator>(const DVD& toCompare) const;
 
 };
 

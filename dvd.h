@@ -1,7 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Bushey, Luke
+	Authors:		Boyer, Destiny
+					Bushey, Luke
 					King, Garret
+					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
@@ -21,17 +23,19 @@
 #define dvd_h
 
 #include <string>
-#include "date.h"
+#include <iostream>
+#include "media.h"
 
 using namespace std;
 
-class DVD {
+const int CURRENTYEAR = 2017;
+
+class DVD : public Media {
 
 	public:
 
-	virtual DVD(void);				//default no-args constructor
+	DVD(void);					//default no-args constructor
 	virtual ~DVD(void);				//default destructor
-	virtual DVD(DVD& toCopy);		//copy constructor, creates deep copy
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -59,7 +63,10 @@ class DVD {
 	//getters
 	string getTitle(void) const;
 	string getDirector(void) const;
+	virtual string getActor(void) const;
 	int getInventory(void) const;
+	int getYear(void) const;
+	virtual int getMonth(void) const;
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -88,6 +95,20 @@ class DVD {
 	------------------------------------------------------------------------------------------------*/
 
 	bool setDirector(string input);
+
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for date. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- input cannot be less than next year and greater than 1927
+
+	POSTCONDITIONS:
+	- sets date equal to input
+
+	------------------------------------------------------------------------------------------------*/
+
+	bool setYear(int input);
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -95,7 +116,7 @@ class DVD {
 		success.
 
 		PRECONDITIONS:
-			- inventory + input != 0
+			- inventory + input > 0
 
 		POSTCONDITIONS:
 			- sets inventory equal to inventory + input
@@ -109,14 +130,13 @@ class DVD {
 	virtual bool operator!=(const DVD& toCompare) const;
 	virtual bool operator<(const DVD& toCompare) const;
 	virtual bool operator>(const DVD& toCompare) const;
-	virtual DVD& operator=(const DVD& toCopy) const;
 
 	private:
 
 	string title = "";
 	string director = "";
 	int inventory = 0;
-	Date* date = NULL;
+	int year = 0;
 
 };
 

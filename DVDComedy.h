@@ -1,7 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Bushey, Luke
+	Authors:		Boyer, Destiny
+					Bushey, Luke
 					King, Garret
+					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
@@ -21,8 +23,13 @@ class Comedy : public DVD {
 	public:
 
 	Comedy(void);				//default no-args constructor
-	Comedy(Comedy& toCopy);		//copy constructor
 	~Comedy(void);				//destructor
+
+	//overloaded comparison operators
+	virtual bool operator==(const DVD& toCompare) const;
+	virtual bool operator!=(const DVD& toCompare) const;
+	virtual bool operator<(const DVD& toCompare) const;
+	virtual bool operator>(const DVD& toCompare) const;
 
 };
 

@@ -25,19 +25,19 @@ class Classic : public DVD {
 	public:
 
 	Classic(void);				//default no-args constructor
-	Classic(Classic& toCopy);	//copy constructor
 	~Classic(void);				//destructor
 
 	bool setData(ifstream& inFile);
 	void display(void) const;
+	string getActor(void) const;
+	int getMonth(void) const;
+
 	bool operator==(const DVD& toCompare) const;
 	bool operator!=(const DVD& toCompare) const;
 	bool operator<(const DVD& toCompare) const;
 	bool operator>(const DVD& toCompare) const;
-	bool operator=(const DVD& toCopy) const;
 
-	string getActor(void) const;
-	int getMonth(void) const;
+	
 
 	/*------------------------------------------------------------------------------------------------
 
@@ -58,16 +58,15 @@ class Classic : public DVD {
 		Setter method for releaseMonth. Returns a bool indicating success.
 
 		PRECONDITIONS:
-			- input cannot be an empty string
+			- input cannot be less than 0 and greater than 12
 
 		POSTCONDITIONS:
-			- sets releaseMonth equal to the int interpreation of the month
+			- sets releaseMonth equal to the input
 
 	------------------------------------------------------------------------------------------------*/
 
-	bool setMonth(string input);
+	bool setMonth(int input);
 
-	Classic& operator=(const Classic& toCopy);
 
 	private:
 

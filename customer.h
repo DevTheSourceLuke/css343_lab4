@@ -15,6 +15,8 @@
 	data members. The method displayCustomer() will neatly print a customer object's
 	information to the console.
 
+	Assumption:  The customer ID will not have preceding zeroes.
+
 -------------------------------------------------------------------------------------------------*/
 
 #pragma once
@@ -23,8 +25,8 @@
 
 #include <string>
 #include <vector>
-#include <queue>
-#include "media.h"
+#include <iostream>
+#include "dvd.h"
 #include "transaction.h"
 
 using namespace std;
@@ -34,7 +36,6 @@ class Customer {
 	public:
 	
 	Customer(void);					//default no-args constructor
-	Customer(Customer& toCopy);		//copy constructor
 	~Customer(void);				//destructor
 
 	/*------------------------------------------------------------------------------------------------
@@ -48,7 +49,7 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void setData(istream& inFile);
+	void setData(istream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 
@@ -72,31 +73,13 @@ class Customer {
 
 	/*------------------------------------------------------------------------------------------------
 
-		Method prints the current DVD items that a Customer has checked out.
-
-		NOTES:	Method cannot change any data members.
-
-	------------------------------------------------------------------------------------------------*/
-
-	void displayHolding(void) const;
-
-	/*------------------------------------------------------------------------------------------------
-
-		Method takes in a Transaction object and adds it to the history queue.
-
-	------------------------------------------------------------------------------------------------*/
-
-	void addTransaction(const Transaction& toAdd);
-
-	/*------------------------------------------------------------------------------------------------
-
 		Method takes in a Transaction object and calls addTransaction() to add the Transaction
 		to the Customer's history. The Transaction is also stored in the Customer's holding
 		vector indicating that they have checked the item out of the store's inventory.
 
 	------------------------------------------------------------------------------------------------*/
 
-	void borrowMedia(Transaction& transaction);
+	void borrowMedia(DVD* movie, Transaction& transaction);
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -106,7 +89,7 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void returnMedia(Transaction& transaction);
+	void returnMedia(DVD* movie, Transaction& transaction);
 
 	//getters
 	int getID(void) const;
@@ -159,12 +142,20 @@ class Customer {
 	Customer& operator=(const Customer& toCopy);
 	
 	private:
+
+	/*------------------------------------------------------------------------------------------------
+
+	Method takes in a Transaction object and adds it to the history queue.
+
+	------------------------------------------------------------------------------------------------*/
+
+	void addTransaction(const Transaction& toAdd);
 	
 	int ID = 0;
 	string firstName = "";
 	string lastName = "";
-	queue<Transaction> history;		//history of all of a customer's transactions
-	vector<Media> holding;			//vector of media customer currently has checked out
+	vector<Transaction> history;		//history of all of a customer's transactions
+	vector<DVD*> holding;			//vector of media customer currently has checked out
 };
 #endif // !customer_h
 
