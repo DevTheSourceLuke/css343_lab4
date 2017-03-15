@@ -16,6 +16,7 @@ void Transaction::processTransaction()
 
 bool Transaction::setData(ifstream & infile)
 {
+	return true;
 }
 
 void Transaction::displayTransaction(void) const
