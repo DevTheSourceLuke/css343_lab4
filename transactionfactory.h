@@ -23,6 +23,10 @@
 #include "hashtable.h"
 #include "binarysearchtree.h"
 #include "transaction.h"
+#include "transactioninventory.h"
+#include "transactionhistory.h"
+#include "transactionborrow.h"
+#include "transactionreturn.h"
 #include "dvd.h"
 
 class TransactionFactory {
@@ -36,7 +40,7 @@ class TransactionFactory {
 
 		------------------------------------------------------------------------------------------------*/
 
-		static void createTransaction(ifstream& infile, queue<Transaction>& pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
+		static void createTransaction(ifstream& infile, queue<Transaction*> pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
 };
 
 #endif
