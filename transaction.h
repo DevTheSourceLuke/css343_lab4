@@ -43,7 +43,7 @@ public:
 
 	virtual bool setData(ifstream& infile);
 
-	virtual void processTransaction();
+	virtual void processTransaction(void);
 
 	/*------------------------------------------------------------------------------------------------
 

@@ -29,6 +29,7 @@ public:
 	bool setData(ifstream& infile);
 	void passCustomers(HashTable* c);
 	void displayTransaction(void) const;
+	void processTransaction(void);
 
 	//getters
 	int getCustomerID(void) const;

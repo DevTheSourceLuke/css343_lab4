@@ -29,6 +29,11 @@ void transactionHistory::displayTransaction(void) const
 	cout << getTransactionType() << " " << getCustomerID() << endl;
 }
 
+void transactionHistory::processTransaction(void)
+{
+	cout << "This is a transaction!!!" << endl;
+}
+
 int transactionHistory::getCustomerID(void) const
 {
 	return customerID;

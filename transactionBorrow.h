@@ -6,7 +6,7 @@ King, Garret
 Created:		2/21/2017
 Modified:		3/1/2017
 
-This class represents a Transction affects the store's customer's Borrow.
+This class represents a Transaction affects the store's customer's Borrow.
 
 -------------------------------------------------------------------------------------------------*/
 
@@ -15,26 +15,47 @@ This class represents a Transction affects the store's customer's Borrow.
 #define transactionborrow_h
 
 #include <string>
+#include <fstream>
+#include <vector>
+#include "binarysearchtree.h"
+#include "dvd.h"
 #include "transaction.h"
+#include "hashtable.h"
 
 class transactionBorrow : public Transaction {
 
 public:
 
-	transactionBorrow(void);								//default no-args constructor
-	transactionBorrow(transactionBorrow& toCopy);		//copy constructo
+	transactionBorrow(void);							//default no-args constructor
 	~transactionBorrow(void);							//destructor
 
-	bool setData(ifstream& inFile, char type);
+	bool setData(ifstream& infile);
+	void passStructures(HashTable* c, vector<BinarySearchTree<DVD>*>* i);
 	void displayTransaction(void) const;
+	void processTransaction(void);
 
 	//getters
+	int getCustomerID(void) const;
 	char getMediaType(void) const;
 	char getGenre(void) const;
 	string getDirector(void) const;
 	string getTitle(void) const;
-	string getFirstName(void) const;
-	string getLastName(void) const;
+	string getActor(void) const;
+
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for customerID. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- input must be greater than 999
+	- input must be less than 10000
+
+	POSTCONDITIONS:
+	- sets customerID to input
+
+	------------------------------------------------------------------------------------------------*/
+
+	bool setCustomerID(int input);
 
 	/*------------------------------------------------------------------------------------------------
 
@@ -94,37 +115,34 @@ public:
 
 	/*------------------------------------------------------------------------------------------------
 
-	Setter method for actorLastName. Returns a bool indicating success.
+	Setter method for actor. Returns a bool indicating success.
 
 	PRECONDITIONS:
 	- input cannot be an empty string
 
 	POSTCONDITIONS:
-	- sets actorLastName to input
+	- sets actor to input
 
 	------------------------------------------------------------------------------------------------*/
 
-	bool setLastName(string input);
+	bool setActor(string input);
 
-	/*------------------------------------------------------------------------------------------------
+	bool setYear(int input);
 
-	Setter method for actorFirstName. Returns a bool indicating success.
+	bool setDate(int inputY, int inputM);
 
-	PRECONDITIONS:
-	- input cannot be an empty string
-
-	POSTCONDITIONS:
-	- sets actorFirstName to input
-
-	------------------------------------------------------------------------------------------------*/
-
-	bool setFirstName(string input);
-
-	transactionBorrow& operator=(const transactionBorrow& toCopy);
 
 private:
-
-
+	int customerID = 0;
+	int year = 0;
+	int month = 0;
+	char mediaType = '_';
+	char genre = '_';
+	string director = "";
+	string title = "";
+	string actor = "";
+	vector<BinarySearchTree<DVD>*>* inventory;
+	HashTable* customers;
 };
 
 

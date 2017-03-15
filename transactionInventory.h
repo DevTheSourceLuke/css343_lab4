@@ -27,7 +27,7 @@ public:
 	transactionInventory(void);								//default no-args constructor
 	~transactionInventory(void);							//destructor
 
-	void processTransaction();
+	void processTransaction(void);
 
 	bool setData(ifstream& infile);
 

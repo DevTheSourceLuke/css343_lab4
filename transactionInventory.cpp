@@ -14,7 +14,7 @@ transactionInventory::~transactionInventory(void)
 
 void transactionInventory::processTransaction()
 {
-
+	cout << "This is a transaction!!!" << endl;
 }
 
 bool transactionInventory::setData(ifstream & infile)
