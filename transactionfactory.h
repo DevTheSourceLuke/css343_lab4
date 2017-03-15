@@ -20,7 +20,10 @@
 
 #include <iostream>
 #include <queue>
+#include "hashtable.h"
+#include "binarysearchtree.h"
 #include "transaction.h"
+#include "DVD.h"
 
 class TransactionFactory {
 
@@ -33,7 +36,7 @@ class TransactionFactory {
 
 		------------------------------------------------------------------------------------------------*/
 
-		static bool createTransaction(ifstream& infile, queue<Transaction>& pending, HashTable<Customer>& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
+		static bool createTransaction(ifstream& infile, queue<Transaction>& pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);		//creates new Transaction objects
 };
 
 #endif

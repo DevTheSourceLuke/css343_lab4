@@ -26,6 +26,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include "dvd.h"
 #include "transaction.h"
 
@@ -49,7 +50,7 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void setData(istream& infile);
+	void setData(ifstream& infile);
 
 	/*------------------------------------------------------------------------------------------------
 

@@ -11,10 +11,10 @@ Customer::~Customer(void)
 	history.clear();
 }
 
-void Customer::setData(istream & infile)
+void Customer::setData(ifstream & infile)
 {
-	int ID;
-	string first, last;
+	int ID = 0;
+	string first, last = "";
 	infile >> ID >> first >> last;
 	if (setID(ID) != true || setFirstName(first) != true || setLastName(last) != true)
 	{
@@ -77,7 +77,8 @@ void Customer::returnMedia(DVD * movie, Transaction & transaction)
 	}
 	if (done == false)
 	{
-		cout << "Movie: was not borrowed. Transaction : " << transaction.displayTransaction();
+		cout << "Movie: was not borrowed. Transaction : ";
+		transaction.displayTransaction();
 	}
 }
 

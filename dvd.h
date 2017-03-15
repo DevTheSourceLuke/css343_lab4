@@ -24,13 +24,12 @@
 
 #include <string>
 #include <iostream>
-#include "media.h"
 
 using namespace std;
 
 const int CURRENTYEAR = 2017;
 
-class DVD : public Media {
+class DVD {
 
 	public:
 

@@ -15,7 +15,8 @@ void StoreManager::processTransactions()
 {
 	while (pending.size() != 0)
 	{
-		pending.front().processTransaction();
+		//pending.front().processTransaction();
+		cout << "Perform Transaction!!!" << endl;
 		completed.push(pending.front());
 		pending.pop();
 	}
@@ -28,7 +29,7 @@ bool StoreManager::setCustomers(ifstream & infile)
 
 bool StoreManager::setInventory(ifstream & infile)
 {
-	return DVDFactory::createTransactions(infile, inventory);
+	return DVDFactory::createDVDs(infile, inventory);
 }
 
 bool StoreManager::setTransactions(ifstream & infile)
