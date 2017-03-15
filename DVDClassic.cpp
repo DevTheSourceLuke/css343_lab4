@@ -3,6 +3,7 @@
 
 Classic::Classic(void)
 {
+	setGenre('C');
 }
 
 Classic::~Classic(void)

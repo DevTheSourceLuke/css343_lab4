@@ -17,6 +17,7 @@
 #define comedy_h
 
 #include "dvd.h"
+#include <fstream>
 
 class Comedy : public DVD {
 
@@ -24,6 +25,8 @@ class Comedy : public DVD {
 
 	Comedy(void);				//default no-args constructor
 	~Comedy(void);				//destructor
+
+	bool setData(ifstream& infile);
 
 	//overloaded comparison operators
 	virtual bool operator==(const DVD& toCompare) const;

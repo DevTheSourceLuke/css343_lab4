@@ -46,6 +46,11 @@ int DVD::getYear(void) const
 	return year;
 }
 
+char DVD::getGenre(void) const
+{
+	return 0;
+}
+
 int DVD::getMonth(void) const
 {
 	return -1;
@@ -100,7 +105,19 @@ bool DVD::adjustInventory(int input)
 	}
 	else
 	{
-		cout << "Inventory for " << getTitle() << " is 0." << endl;
+		cout << "Inventory for " << getTitle() << " would be " << inventory + input << endl;
+	}
+}
+
+bool DVD::setGenre(char input)
+{
+	if (input == ' ')
+	{
+		return false;
+	}
+	else
+	{
+		return true;
 	}
 }
 

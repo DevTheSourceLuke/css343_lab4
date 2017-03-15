@@ -17,6 +17,7 @@
 #define drama_h
 
 #include "dvd.h"
+#include <fstream>
 
 class Drama : public DVD {
 
@@ -24,6 +25,8 @@ class Drama : public DVD {
 
 	Drama(void);				//default no-args constructor
 	~Drama(void);				//destructor
+
+	bool setData(ifstream& infile);
 
 	//overloaded comparison operators
 	virtual bool operator==(const DVD& toCompare) const;

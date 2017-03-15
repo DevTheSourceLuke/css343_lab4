@@ -31,9 +31,9 @@ const int CURRENTYEAR = 2017;
 
 class DVD {
 
-	public:
+public:
 
-	DVD(void);					//default no-args constructor
+	DVD(void);						//default no-args constructor
 	virtual ~DVD(void);				//default destructor
 	
 	/*------------------------------------------------------------------------------------------------
@@ -66,6 +66,7 @@ class DVD {
 	int getInventory(void) const;
 	int getYear(void) const;
 	virtual int getMonth(void) const;
+	char getGenre(void) const;
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -124,14 +125,16 @@ class DVD {
 	
 	bool adjustInventory(int input);
 
+	bool setGenre(char input);
+
 	//overloaded comparison operators
 	virtual bool operator==(const DVD& toCompare) const;
 	virtual bool operator!=(const DVD& toCompare) const;
 	virtual bool operator<(const DVD& toCompare) const;
 	virtual bool operator>(const DVD& toCompare) const;
 
-	private:
-
+private:
+	char genre = ' ';
 	string title = "";
 	string director = "";
 	int inventory = 0;

@@ -3,10 +3,34 @@
 
 Drama::Drama(void)
 {
+	setGenre('D');
 }
 
 Drama::~Drama(void)
 {
+}
+
+bool Drama::setData(ifstream & infile)
+{
+	int stock, year;
+	string director, title;
+
+	infile.ignore(1);
+	infile >> stock;
+	infile.ignore(1);
+	getline(infile, director, ',');
+	getline(infile, title, ',');
+	infile >> year;
+
+	if (true && setDirector(director) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
+	{
+		return true;
+	}
+	else
+	{
+		cout << "Drama DVD not created." << endl;
+		return false;
+	}
 }
 
 bool Drama::operator==(const DVD & toCompare) const
