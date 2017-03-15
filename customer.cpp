@@ -11,7 +11,7 @@ Customer::~Customer(void)
 	history.clear();
 }
 
-void Customer::setData(ifstream & infile)
+bool Customer::setData(ifstream & infile)
 {
 	int ID = 0;
 	string first, last = "";
@@ -19,6 +19,11 @@ void Customer::setData(ifstream & infile)
 	if (setID(ID) != true || setFirstName(first) != true || setLastName(last) != true)
 	{
 		cout << "Customer not created." << endl;
+		return false;
+	}
+	else
+	{
+		return true;
 	}
 }
 
