@@ -110,7 +110,7 @@ bool HashTable::insertCustomer(Customer* custToInsert)
 
 Customer* HashTable::getCustomer(int custID)
 {
-	if (custID > 999 || custID < 10000)
+	if (custID <= 999 || custID >= 10000)
 	{
 		return NULL;
 	}

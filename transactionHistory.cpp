@@ -28,7 +28,7 @@ void transactionHistory::processTransaction(HashTable& customers, vector<BinaryS
 {
 
 	Customer* temp = NULL;
-	customers.getCustomer(getCustomerID());
+	temp = customers.getCustomer(getCustomerID());
 	if (temp == NULL)
 	{
 		cout << "No Customer with this id exists: " << getCustomerID() << endl;
