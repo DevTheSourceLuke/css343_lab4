@@ -134,6 +134,7 @@ bool Classic::setOtherStock(Classic* dupe)
 		return false;
 	}
 	otherStock = dupe;
+	return true;
 }
 
 Classic* Classic::getOtherStock(void)
