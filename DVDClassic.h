@@ -69,15 +69,14 @@ public:
 	bool setMonth(int input);
 
 	bool setOtherStock(Classic* dupe);
-	bool isEqual(const DVD& toCompare) const;
 
 	Classic* getOtherStock(void);
 
 
 private:
 
-	string majorActor = "";
-	int releaseMonth = 0;
+	string majorActor;
+	int releaseMonth;
 	Classic* otherStock;
 
 };

@@ -4,13 +4,14 @@
 Transaction::Transaction(void)
 {
 	setTransactionType('T');
+	transactionType = ' ';
 }
 
 Transaction::~Transaction(void)
 {
 }
 
-void Transaction::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
+void Transaction::processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC)
 {
 }
 

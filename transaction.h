@@ -25,6 +25,9 @@
 #include <string>
 #include "hashtable.h"
 #include "binarysearchtree.h"
+#include "DVDClassic.h"
+#include "DVDComedy.h"
+#include "DVDDrama.h"
 
 using namespace std;
 
@@ -46,7 +49,7 @@ public:
 
 	virtual bool setData(ifstream& infile);
 
-	virtual void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
+	virtual void processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC);
 
 	/*------------------------------------------------------------------------------------------------
 
@@ -77,7 +80,7 @@ public:
 
 private:
 	
-	char transactionType = '_';
+	char transactionType;
 	
 };
 

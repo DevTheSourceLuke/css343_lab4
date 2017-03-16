@@ -27,7 +27,7 @@ class Drama : public DVD {
 	~Drama(void);				//destructor
 
 	bool setData(ifstream& infile);
-	bool isEqual(const DVD& toCompare) const;
+
 
 	//overloaded comparison operators
 	bool operator==(const DVD& toCompare) const;

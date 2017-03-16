@@ -17,6 +17,9 @@ This class represents a Transaction affects the store's customer's history.
 #include <string>
 #include <fstream>
 #include "transaction.h"
+#include "DVDClassic.h"
+#include "DVDComedy.h"
+#include "DVDDrama.h"
 
 class transactionHistory: public Transaction {
 
@@ -27,7 +30,7 @@ public:
 
 	bool setData(ifstream& infile);
 	void displayTransaction(void) const;
-	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
+	void processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC);
 	string toString(void) const;
 
 	//getters
@@ -49,7 +52,7 @@ public:
 	bool setCustomerID(int input);
 
 private:
-	int customerID = 0;
+	int customerID;
 	HashTable* customers;
 
 };

@@ -12,13 +12,12 @@ transactionInventory::~transactionInventory(void)
 	inventory = NULL;
 }
 
-void transactionInventory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
+void transactionInventory::processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC)
 {
 	cout << endl  << "Printing Inventory: " << endl;
-	for (int i = 0; i < inventory.size(); i++)
-	{
-		inventory[i]->display();
-	}
+	inventoryC->display();
+	inventoryD->display();
+	inventoryF->display();
 }
 
 bool transactionInventory::setData(ifstream & infile)

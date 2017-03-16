@@ -3,6 +3,9 @@
 
 Customer::Customer(void)
 {
+	ID = 0;
+	firstName = "";
+	lastName = "";
 }
 
 Customer::~Customer(void)

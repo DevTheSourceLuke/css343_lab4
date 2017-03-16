@@ -82,7 +82,10 @@ public:
 private:
 
 	HashTable customers;									//HashTable to store customers
-	vector<BinarySearchTree<DVD>*> inventory;						//vector holding pointers to inventory sets
+	//vector<BinarySearchTree<DVD>*> inventory;						//vector holding pointers to inventory sets
+	BinarySearchTree<Comedy>* inventoryF;
+	BinarySearchTree<Drama>* inventoryD;
+	BinarySearchTree<Classic>* inventoryC;
 	queue<Transaction*> pending;							//queue of Transaction to be completed
 	queue<Transaction*> completed;						//queue of completed Transactions
 

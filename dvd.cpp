@@ -3,7 +3,11 @@
 
 DVD::DVD(void)
 {
-
+	genre = ' ';
+	title = "";
+	director = "";
+	inventory = 0;
+	year = 0;
 }
 
 DVD::~DVD(void)
@@ -137,11 +141,6 @@ bool DVD::setGenre(char input)
 	}
 }
 
-bool DVD::isEqual(const DVD & target) const
-{
-	return true;
-}
-
 bool DVD::setActor(string input)
 {
 	if (input == " ")
@@ -156,8 +155,7 @@ bool DVD::setActor(string input)
 
 bool DVD::operator==(const DVD & toCompare) const
 {
-	return isEqual(toCompare);
-	/*switch (getGenre())
+	switch (getGenre())
 	{
 	case 'F':
 		return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
@@ -168,7 +166,7 @@ bool DVD::operator==(const DVD & toCompare) const
 	default:
 		cout << "False" << endl;
 		return false;
-	}*/
+	}
 }
 
 bool DVD::operator!=(const DVD & toCompare) const

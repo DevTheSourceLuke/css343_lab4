@@ -32,7 +32,7 @@ public:
 
 	bool setData(ifstream& infile);
 	void displayTransaction(void) const;
-	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
+	void processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC);
 
 	//getters
 	int getMonth(void) const;
@@ -137,14 +137,14 @@ public:
 
 
 private:
-	int customerID = 0;
-	int year = 0;
-	int month = 0;
-	char mediaType = '_';
-	char genre = '_';
-	string director = "";
-	string title = "";
-	string actor = "";
+	int customerID;
+	int year;
+	int month;
+	char mediaType;
+	char genre ;
+	string director;
+	string title;
+	string actor;
 	vector<BinarySearchTree<DVD>*>* inventory;
 	HashTable* customers;
 };

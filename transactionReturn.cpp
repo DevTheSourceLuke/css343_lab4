@@ -6,6 +6,14 @@ transactionReturn::transactionReturn(void)
 	inventory = NULL;
 	customers = NULL;
 	setTransactionType('R');
+	customerID = 0;
+	year = 0;
+	month = 0;
+	mediaType = ' ';
+	genre = ' ';
+	director = "";
+	title = "";
+	actor = "";
 }
 
 transactionReturn::~transactionReturn(void)
@@ -113,7 +121,7 @@ string transactionReturn::toString(void) const
 	return transaction;
 }
 
-void transactionReturn::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
+void transactionReturn::processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC)
 {
 	Customer* temp = NULL;
 	temp = customers.getCustomer(getCustomerID());
@@ -125,54 +133,60 @@ void transactionReturn::processTransaction(HashTable& customers, vector<BinarySe
 		return;
 	}
 
-	DVD target;
-	DVD* returned = NULL;
+	//DVD target;
+	//DVD* returned = NULL;
+	Classic targetC = Classic();
+	Classic* returnedC = NULL;
+	Drama targetD = Drama();
+	Drama* returnedD = NULL;
+	Comedy targetF = Comedy();
+	Comedy* returnedF = NULL;
 
 	switch (getGenre())
 	{
 	case 'C':
-		target = Classic();
-		target.setMonth(getMonth());
-		target.setYear(getYear());
-		target.setActor(getActor());
-		inventory[2]->retrieve(target, returned);
-		if (returned == NULL)
+
+		targetC.setMonth(getMonth());
+		targetC.setYear(getYear());
+		targetC.setActor(getActor());
+		inventoryC->retrieve(targetC, returnedC);
+		if (returnedC == NULL)
 		{
 			cout << "This movie could not be found: " << getMonth() << " " << getYear() << " " << getActor() << endl;
 		}
 		else
 		{
-			temp->returnMedia(returned, toString());
+			temp->borrowMedia(returnedC, toString());
 		}
 		break;
 
 	case 'D':
-		target = Drama();
-		target.setDirector(getDirector());
-		target.setTitle(getTitle());
-		inventory[1]->retrieve(target, returned);
-		if (returned == NULL)
+
+		targetD.setDirector(getDirector());
+		targetD.setTitle(getTitle());
+		inventoryD->retrieve(targetD, returnedD);
+		if (returnedD == NULL)
 		{
 			cout << "This movie could not be found: " << getTitle() << " " << getDirector() << endl;
 		}
 		else
 		{
-			temp->returnMedia(returned, toString());
+			temp->borrowMedia(returnedD, toString());
 		}
 		break;
 
 	case 'F':
-		target = Comedy();
-		target.setTitle(getTitle());
-		target.setYear(getYear());
-		inventory[0]->retrieve(target, returned);
-		if (returned == NULL)
+
+		targetF.setTitle(getTitle());
+		targetF.setYear(getYear());
+		inventoryF->retrieve(targetF, returnedF);
+		if (returnedF == NULL)
 		{
 			cout << "This movie could not be found: " << getTitle() << " " << getYear() << endl;
 		}
 		else
 		{
-			temp->returnMedia(returned, toString());
+			temp->borrowMedia(returnedF, toString());
 		}
 		break;
 

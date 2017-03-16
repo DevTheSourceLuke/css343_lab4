@@ -126,7 +126,6 @@ public:
 	bool adjustInventory(int input);
 
 	bool setGenre(char input);
-	virtual bool isEqual(const DVD& target) const;
 
 	virtual bool setActor(string input);
 
@@ -137,11 +136,11 @@ public:
 	virtual bool operator>(const DVD& toCompare) const;
 
 private:
-	char genre = ' ';
-	string title = "";
-	string director = "";
-	int inventory = 0;
-	int year = 0;	
+	char genre;
+	string title ;
+	string director;
+	int inventory;
+	int year;	
 };
 
 #endif // !dvd_h

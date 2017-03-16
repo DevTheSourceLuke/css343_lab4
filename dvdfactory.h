@@ -43,7 +43,7 @@ public:
 	in order to populate data members.
 	------------------------------------------------------------------------------------------------*/
 
-	static void createDVDs(ifstream& infile, vector<BinarySearchTree<DVD>*> inventory);
+	static void createDVDs(ifstream& infile, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC);
 
 };
 

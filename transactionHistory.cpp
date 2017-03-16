@@ -5,6 +5,7 @@ transactionHistory::transactionHistory(void)
 {
 	customers = NULL;
 	setTransactionType('H');
+	customerID = 0;
 }
 
 transactionHistory::~transactionHistory(void)
@@ -24,7 +25,7 @@ void transactionHistory::displayTransaction(void) const
 	cout << getTransactionType() << " " << getCustomerID() << endl;
 }
 
-void transactionHistory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
+void transactionHistory::processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC)
 {
 
 	Customer* temp = NULL;

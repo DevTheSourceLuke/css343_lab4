@@ -19,13 +19,9 @@ StoreManager::~StoreManager(void)
 		completed.pop();
 	}
 
-	for (int i = 0; i < inventory.size(); i++)
-	{
-		inventory[i]->~BinarySearchTree();
-		delete inventory[i];
-		inventory[i] = NULL;
-	}
-	inventory.clear();
+	inventoryF->clear();
+	inventoryC->clear();
+	inventoryD->clear();
 }
 
 void StoreManager::processTransactions()
@@ -33,7 +29,7 @@ void StoreManager::processTransactions()
 	cout << endl << "Processing Transactions..." << endl;
 	while (pending.size() != 0)
 	{
-	    pending.front()->processTransaction(customers, inventory);
+	    pending.front()->processTransaction(customers, inventoryF, inventoryD, inventoryC);
 		completed.push(pending.front());
 		pending.pop();
 	}
@@ -48,11 +44,10 @@ void StoreManager::setCustomers(ifstream & infile)
 void StoreManager::setInventory(ifstream & infile)
 {
 	cout << endl << "Creating Inventory..." << endl;
-	inventory.resize(3);
-	inventory[0] = new BinarySearchTree<DVD>();
-	inventory[1] = new BinarySearchTree<DVD>();
-	inventory[2] = new BinarySearchTree<DVD>();
-	DVDFactory::createDVDs(infile, inventory);
+	inventoryF = new BinarySearchTree<Comedy>();
+	inventoryD = new BinarySearchTree<Drama>();
+	inventoryC = new BinarySearchTree<Classic>();
+	DVDFactory::createDVDs(infile, inventoryF, inventoryD, inventoryC);
 }
 
 void StoreManager::setTransactions(ifstream & infile)

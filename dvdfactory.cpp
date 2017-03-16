@@ -2,68 +2,72 @@
 #include <iostream>
 #include "dvdfactory.h"
 
-void DVDFactory::createDVDs(ifstream & infile, vector<BinarySearchTree<DVD>*> inventory)
+void DVDFactory::createDVDs(ifstream & infile, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC)
 {
-	DVD* temp = NULL;
+	//DVD* temp = NULL;
 	while (!infile.eof())
 	{
 		char genre;
 
 		infile >> genre;
 
+		Comedy* tempF = new Comedy();
+		Drama* tempD = new Drama();
+		Classic* tempC = new Classic();
+
 		switch (genre)
 		{
 		case 'F':
-			temp = new Comedy();
-			if (temp->setData(infile))
+
+			if (tempF->setData(infile))
 			{
-				if (!inventory[0]->insert(temp))
+				if (!inventoryF->insert(tempF))
 				{
-					delete temp;
-					temp = NULL;
+					delete tempF;
+					tempF = NULL;
 				}
-				temp = NULL;
+				tempF = NULL;
 			}
 			else
 			{
-				delete temp;
-				temp = NULL;
+				delete tempF;
+				tempF = NULL;
 			}
 			break;
 
 		case 'D':
-			temp = new Drama();
-			if (temp->setData(infile))
+
+			if (tempD->setData(infile))
 			{
-				if (!inventory[1]->insert(temp))
+				if (!inventoryD->insert(tempD))
 				{
-					delete temp;
-					temp = NULL;
+					delete tempD;
+					tempD = NULL;
 				}
-				temp = NULL;
+				tempD = NULL;
 			}
 			else
 			{
-				delete temp;
-				temp = NULL;
+				delete tempD;
+				tempD = NULL;
 			}
 			break;
 
 		case 'C':
-			temp = new Classic();
-			if (temp->setData(infile))
+
+			if (tempC->setData(infile))
 			{
-				if (!inventory[2]->insert(temp))
+				if (!inventoryC->insert(tempC))
 				{
-					delete temp;
-					temp = NULL;
+					delete tempC;
+					tempC = NULL;
 				}
-				temp = NULL;
+				tempC = NULL;
 			}
 			else
 			{
-				delete temp;
-				temp = NULL;
+				delete tempC;
+				tempC = NULL;
 			}
 			break;
 

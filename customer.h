@@ -149,9 +149,9 @@ class Customer {
 
 	void addTransaction(string toAdd);
 	
-	int ID = 0;
-	string firstName = "";
-	string lastName = "";
+	int ID;
+	string firstName;
+	string lastName;
 	vector<string> history;			//history of all of a customer's transactions
 	vector<DVD*> holding;			//vector of media customer currently has checked out
 };

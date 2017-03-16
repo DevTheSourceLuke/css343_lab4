@@ -4,6 +4,8 @@
 Classic::Classic(void)
 {
 	setGenre('C');
+	majorActor = "";
+	releaseMonth = 0;
 }
 
 Classic::~Classic(void)
@@ -135,11 +137,6 @@ bool Classic::setOtherStock(Classic* dupe)
 	}
 	otherStock = dupe;
 	return true;
-}
-
-bool Classic::isEqual(const DVD & toCompare) const
-{
-	return (getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
 }
 
 Classic* Classic::getOtherStock(void)
