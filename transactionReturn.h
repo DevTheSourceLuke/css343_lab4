@@ -16,10 +16,8 @@ This class represents a Transaction affects the store's customer's Return.
 
 #include <string>
 #include <vector>
-#include "binarysearchtree.h"
 #include "dvd.h"
 #include "transaction.h"
-#include "hashtable.h"
 
 class transactionReturn : public Transaction {
 
@@ -31,7 +29,7 @@ public:
 	bool setData(ifstream& infile);
 	void passStructures(HashTable* c, vector<BinarySearchTree<DVD>*>* i);
 	void displayTransaction(void) const;
-	void processTransaction(void);
+	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
 
 	//getters
 	int getMonth(void) const;

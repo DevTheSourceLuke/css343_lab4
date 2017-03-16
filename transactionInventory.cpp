@@ -12,7 +12,7 @@ transactionInventory::~transactionInventory(void)
 	inventory = NULL;
 }
 
-void transactionInventory::processTransaction()
+void transactionInventory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
 	cout << "This is a transaction!!!" << endl;
 }

@@ -98,7 +98,7 @@ void transactionReturn::displayTransaction(void) const
 	cout << "This is a transaction!!!" << endl;
 }
 
-void transactionReturn::processTransaction(void)
+void transactionReturn::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
 	cout << "Processing....." << endl;
 }

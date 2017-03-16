@@ -2,7 +2,7 @@
 #include <iostream>
 #include "transactionfactory.h"
 
-void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*>& pending, HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
+void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*>& pending)
 {	
 	cout << "Make transactions." << endl;
 	Transaction* temp = NULL;

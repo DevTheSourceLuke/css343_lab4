@@ -17,10 +17,8 @@ This class represents a Transaction affects the store's customer's Borrow.
 #include <string>
 #include <fstream>
 #include <vector>
-#include "binarysearchtree.h"
 #include "dvd.h"
 #include "transaction.h"
-#include "hashtable.h"
 
 class transactionBorrow : public Transaction {
 
@@ -30,10 +28,9 @@ public:
 	~transactionBorrow(void);							//destructor
 
 	bool setData(ifstream& infile);
-	virtual void passInventory(vector<BinarySearchTree<DVD>*>* i);
-	virtual void passCustomers(HashTable* c);
+	void passStructures(HashTable* c, vector<BinarySearchTree<DVD>*>* i);
 	void displayTransaction(void) const;
-	void processTransaction(void);
+	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
 
 	//getters
 	int getMonth(void) const;

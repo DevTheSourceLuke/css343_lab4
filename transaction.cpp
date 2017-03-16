@@ -10,7 +10,7 @@ Transaction::~Transaction(void)
 {
 }
 
-void Transaction::processTransaction()
+void Transaction::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
 }
 
@@ -22,14 +22,6 @@ bool Transaction::setData(ifstream & infile)
 void Transaction::displayTransaction(void) const
 { 
 	cout << transactionType << endl;
-}
-
-void Transaction::passInventory(vector<BinarySearchTree<DVD>*>* i)
-{
-}
-
-void Transaction::passCustomers(HashTable * c)
-{
 }
 
 char Transaction::getTransactionType(void) const

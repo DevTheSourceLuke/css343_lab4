@@ -31,7 +31,7 @@ void Customer::displayHistory(void) const
 {
 	for (int i = 0; i < history.size(); i++)
 	{
-		history[i].displayTransaction();
+		cout << history[i];
 	}
 }
 
@@ -40,7 +40,7 @@ void Customer::displayCustomer(void) const
 	cout << "Customer: " << getID() << " " << getFirstName() << " " << getLastName() << endl;
 }
 
-void Customer::borrowMedia(DVD * movie, Transaction & transaction)
+void Customer::borrowMedia(DVD * movie, string transaction)
 {
 	int i = 0;
 	bool done = false;
@@ -60,12 +60,12 @@ void Customer::borrowMedia(DVD * movie, Transaction & transaction)
 	addTransaction(transaction);
 }
 
-void Customer::addTransaction(const Transaction & toAdd)
+void Customer::addTransaction(string toAdd)
 {
 	history.push_back(toAdd);
 }
 
-void Customer::returnMedia(DVD * movie, Transaction & transaction)
+void Customer::returnMedia(DVD * movie, string transaction)
 {
 	int i = 0;
 	bool done = false;
@@ -82,8 +82,8 @@ void Customer::returnMedia(DVD * movie, Transaction & transaction)
 	}
 	if (done == false)
 	{
-		cout << "Movie: was not borrowed. Transaction : ";
-		transaction.displayTransaction();
+		cout << "Movie: was not borrowed. Transaction : " << transaction << endl;
+		
 	}
 }
 

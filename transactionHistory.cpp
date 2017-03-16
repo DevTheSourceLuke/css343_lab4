@@ -29,8 +29,9 @@ void transactionHistory::displayTransaction(void) const
 	cout << getTransactionType() << " " << getCustomerID() << endl;
 }
 
-void transactionHistory::processTransaction(void)
+void transactionHistory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
+
 	cout << "This is a transaction!!!" << endl;
 }
 

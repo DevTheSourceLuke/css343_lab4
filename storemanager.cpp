@@ -32,7 +32,7 @@ void StoreManager::processTransactions()
 {
 	while (pending.size() != 0)
 	{
-		//pending.front().processTransaction();
+	    //pending.front().processTransaction();
 		cout << "Perform Transaction!!!" << endl;
 		completed.push(pending.front());
 		pending.pop();
@@ -55,5 +55,5 @@ void StoreManager::setInventory(ifstream & infile)
 
 void StoreManager::setTransactions(ifstream & infile)
 {
-	TransactionFactory::createTransaction(infile, pending, customers, inventory);
+	TransactionFactory::createTransaction(infile, pending);
 }

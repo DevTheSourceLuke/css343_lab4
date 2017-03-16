@@ -1,9 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Boyer, Destiny
-					Bushey, Luke
+	Authors:		Bushey, Luke
 					King, Garret
-					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
@@ -28,7 +26,6 @@
 #include <iostream>
 #include <fstream>
 #include "dvd.h"
-#include "transaction.h"
 
 using namespace std;
 
@@ -80,7 +77,7 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void borrowMedia(DVD* movie, Transaction& transaction);
+	void borrowMedia(DVD* movie, string transaction);
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -90,7 +87,7 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void returnMedia(DVD* movie, Transaction& transaction);
+	void returnMedia(DVD* movie, string transaction);
 
 	//getters
 	int getID(void) const;
@@ -150,12 +147,12 @@ class Customer {
 
 	------------------------------------------------------------------------------------------------*/
 
-	void addTransaction(const Transaction& toAdd);
+	void addTransaction(string toAdd);
 	
 	int ID = 0;
 	string firstName = "";
 	string lastName = "";
-	vector<Transaction> history;		//history of all of a customer's transactions
+	vector<string> history;			//history of all of a customer's transactions
 	vector<DVD*> holding;			//vector of media customer currently has checked out
 };
 #endif // !customer_h

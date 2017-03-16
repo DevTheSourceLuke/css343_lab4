@@ -17,7 +17,6 @@ This class represents a Transaction affects the store's inventory.
 #include <string>
 #include <vector>
 #include "transaction.h"
-#include "binarysearchtree.h"
 #include "dvd.h"
 
 class transactionInventory : public Transaction {
@@ -27,7 +26,7 @@ public:
 	transactionInventory(void);								//default no-args constructor
 	~transactionInventory(void);							//destructor
 
-	void processTransaction(void);
+	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
 
 	bool setData(ifstream& infile);
 
