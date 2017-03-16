@@ -14,11 +14,11 @@
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef hashtable_h
 #define hashtable_h
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include "customer.h"
 

@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
 
-Authors:		Boyer, Destiny
+Authors:		
 Bushey, Luke
 King, Garret
-Selin, Zach
+
 
 Created:		2/21/2017
 Modified:		3/1/2017
@@ -14,7 +14,7 @@ inventory management data structure and for populating data members.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef classic_h
 #define classic_h
 

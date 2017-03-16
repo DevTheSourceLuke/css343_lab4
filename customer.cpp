@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "customer.h"
 
 Customer::Customer(void)

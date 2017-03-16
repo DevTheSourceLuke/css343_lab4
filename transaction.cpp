@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "transaction.h"
 
 Transaction::Transaction(void)

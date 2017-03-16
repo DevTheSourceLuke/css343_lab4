@@ -11,7 +11,7 @@ This is a factory class to create customer objects at runtime.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef customerfactory_h
 #define customerfactory_h
 

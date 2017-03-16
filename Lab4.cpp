@@ -6,7 +6,7 @@ Created:		3/13/2017
 Modified:		3/13/2017
 -------------------------------------------------------------------------------------------------*/
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include <fstream>
 #include "storemanager.h"

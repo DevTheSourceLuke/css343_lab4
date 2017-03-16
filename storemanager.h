@@ -1,8 +1,8 @@
 /*-------------------------------------------------------------------------------------------------
-Authors:		Boyer, Destiny
+Authors:		
 Bushey, Luke
 King, Garret
-Selin, Zach
+
 Created:		2/21/2017
 Modified:		3/1/2017
 StoreManager is a Manager class that populates data members and manages the interactions
@@ -12,7 +12,7 @@ INVARIANTS:
 - Store is set up to handle no more than 10,000 customers
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef storemanager_h
 #define storemanager_h
 

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "DVDClassic.h"
 
 Classic::Classic(void)

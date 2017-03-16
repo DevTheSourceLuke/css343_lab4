@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "dvd.h"
 
 DVD::DVD(void)

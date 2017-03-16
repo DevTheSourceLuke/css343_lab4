@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "DVDComedy.h"
 
 Comedy::Comedy(void)
@@ -35,13 +35,7 @@ bool Comedy::setData(ifstream & infile)
 
 bool Comedy::operator==(const DVD & toCompare) const
 {
-	if (toCompare.getTitle().front() == ' ')
-	{
-		string title = toCompare.getTitle();
-		title = title.substr(1, title.length());
-		return (getTitle().compare(title) != 0 && getYear() == toCompare.getYear());
-	}
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getYear() == toCompare.getYear());
+	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
 }
 
 bool Comedy::operator!=(const DVD & toCompare) const

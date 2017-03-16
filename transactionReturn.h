@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 
 Authors:		Bushey, Luke
-King, Garret
+				King, Garret
 
 Created:		2/21/2017
 Modified:		3/1/2017
@@ -10,7 +10,7 @@ This class represents a Transaction affects the store's customer's Return.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactionreturn_h
 #define transactionreturn_h
 
