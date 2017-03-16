@@ -136,8 +136,7 @@ private:
 	string title = "";
 	string director = "";
 	int inventory = 0;
-	int year = 0;
-
+	int year = 0;	
 };
 
 #endif // !dvd_h

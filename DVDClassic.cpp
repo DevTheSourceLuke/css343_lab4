@@ -22,8 +22,8 @@ bool Classic::setData(ifstream & infile)
 	getline(infile, title, ',');
 	infile >> first >> last >> month >> year;
 
-	if (setActor(first + " " + last) == true && setDirector(director) == true && setMonth(month) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
-	{
+	if (setActor(first + " " + last) == true && setDirector(director) == true && setMonth(month) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true && setOtherStock(this) == true)
+	{	
 		return true;
 	}
 	else
@@ -125,6 +125,20 @@ bool Classic::operator>(const DVD & toCompare) const
 	{
 		return false;
 	}
+}
+
+bool Classic::setOtherStock(Classic* dupe)
+{
+	if (otherStock == NULL)
+	{
+		return false;
+	}
+	otherStock = dupe;
+}
+
+Classic* Classic::getOtherStock(void)
+{
+	return otherStock;
 }
 
 bool Classic::setActor(string input)

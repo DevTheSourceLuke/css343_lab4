@@ -68,11 +68,16 @@ public:
 
 	bool setMonth(int input);
 
+	bool setOtherStock(Classic* dupe);
+
+	Classic* getOtherStock(void);
+
 
 private:
 
 	string majorActor = "";
 	int releaseMonth = 0;
+	Classic* otherStock;
 
 };
 
