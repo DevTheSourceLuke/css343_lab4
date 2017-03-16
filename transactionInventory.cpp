@@ -14,6 +14,7 @@ transactionInventory::~transactionInventory(void)
 
 void transactionInventory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
+	cout << "Printing Inventory: " << endl;
 	for (int i = 0; i < inventory.size(); i++)
 	{
 		inventory[i]->display();
