@@ -1,8 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
 	
-	Authors:		Bushey, Luke
+	Authors:		Boyer, Destiny
+					Bushey, Luke
 					King, Garret
-					
+					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
@@ -20,12 +21,12 @@
 #include <iostream>
 #include <queue>
 #include "hashtable.h"
-#include "binarysearchtree.h"
+
 #include "transaction.h"
-#include "transactioninventory.h"
-#include "transactionhistory.h"
-#include "transactionborrow.h"
-#include "transactionreturn.h"
+#include "transactionInventory.h"
+#include "transactionHistory.h"
+#include "transactionBorrow.h"
+#include "transactionReturn.h"
 #include "dvd.h"
 
 class TransactionFactory {

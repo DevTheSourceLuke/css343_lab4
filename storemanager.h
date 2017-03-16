@@ -1,8 +1,8 @@
 /*-------------------------------------------------------------------------------------------------
-Authors:		
+Authors:		Boyer, Destiny
 Bushey, Luke
 King, Garret
-
+Selin, Zach
 Created:		2/21/2017
 Modified:		3/1/2017
 StoreManager is a Manager class that populates data members and manages the interactions
@@ -16,12 +16,11 @@ INVARIANTS:
 #ifndef storemanager_h
 #define storemanager_h
 
-#include <queue>
-#include "hashtable.h"
-#include "transaction.h"
-#include "dvd.h"
-#include "customer.h"
-#include "binarysearchtree.h"
+//#include <queue>
+//#include "hashtable.h"
+//#include "transaction.h"
+//#include "dvd.h"
+//#include "customer.h"
 #include "customerfactory.h"
 #include "transactionfactory.h"
 #include "dvdfactory.h"

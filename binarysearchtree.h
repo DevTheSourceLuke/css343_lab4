@@ -35,7 +35,6 @@ public:
 	void display(void) const;
 	void clear(void);
 	bool isEmpty(void) const;
-	void buildTree(ifstream& inFile);
 
 private:
 
@@ -126,30 +125,6 @@ void BinarySearchTree<NodeData>::clear(void) {
 template <typename NodeData>
 bool BinarySearchTree<NodeData>::isEmpty(void) const {
 	return root == NULL;
-};
-
-
-template <typename NodeData>
-void BinarySearchTree<NodeData>::buildTree(ifstream& infile) {
-	NodeData* ptr;
-	bool isValid;	
-
-	for (;;) {
-		ptr = new NodeData;
-		isValid = ptr->setData(infile);
-
-		if (infile.eof()) {
-			delete ptr;
-			break;
-		}
-
-		if (isValid) {
-			insert(ptr);
-		}
-		else {
-			delete ptr;
-		}
-	}
 };
 
 

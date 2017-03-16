@@ -35,6 +35,23 @@ bool Drama::setData(ifstream & infile)
 
 bool Drama::operator==(const DVD & toCompare) const
 {
+	if (toCompare.getTitle().front() == ' ')
+	{
+		if (toCompare.getDirector().front() == ' ')
+		{
+			string title = toCompare.getTitle();
+			title = title.substr(1, title.length());
+			string director = toCompare.getDirector();
+			director = director.substr(1, director.length());
+			return (getTitle().compare(title) != 0 && getDirector().compare(director) != 0);
+		}
+		else
+		{
+			string title = toCompare.getTitle();
+			title = title.substr(1, title.length());
+			return (getTitle().compare(title) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
+		}
+	}
 	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
 }
 
