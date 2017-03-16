@@ -89,8 +89,8 @@ string transactionBorrow::toString(void) const
 {
 	string transaction = "B ";
 	transaction += to_string(getCustomerID()) + " ";
-	char genre = getGenre();
-	transaction += genre + " ";
+	transaction += getGenre();
+	transaction += " ";
 
 	switch (genre)
 	{
