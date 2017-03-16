@@ -89,7 +89,7 @@ string transactionReturn::toString(void) const
 {
 	string transaction = "R ";
 	transaction += to_string(getCustomerID()) + " ";
-	transaction += getGenre() + " ";
+	transaction += to_string(getGenre()) + " ";
 
 	switch (genre)
 	{
