@@ -33,6 +33,11 @@ bool Comedy::setData(ifstream & infile)
 	}
 }
 
+bool Comedy::isEqual(const DVD & toCompare) const
+{
+	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
+}
+
 bool Comedy::operator==(const DVD & toCompare) const
 {
 	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);

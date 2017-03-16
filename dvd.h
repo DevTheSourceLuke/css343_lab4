@@ -64,7 +64,7 @@ public:
 	int getInventory(void) const;
 	int getYear(void) const;
 	virtual int getMonth(void) const;
-	char getGenre(void) const;
+	virtual char getGenre(void) const;
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -126,6 +126,7 @@ public:
 	bool adjustInventory(int input);
 
 	bool setGenre(char input);
+	virtual bool isEqual(const DVD& target) const;
 
 	virtual bool setActor(string input);
 

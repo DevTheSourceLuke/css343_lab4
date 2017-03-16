@@ -69,6 +69,7 @@ public:
 	bool setMonth(int input);
 
 	bool setOtherStock(Classic* dupe);
+	bool isEqual(const DVD& toCompare) const;
 
 	Classic* getOtherStock(void);
 

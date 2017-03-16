@@ -32,7 +32,7 @@ void Customer::displayHistory(void) const
 	cout << "History for: " << firstName << " " << lastName << endl;
 	for (int i = 0; i < history.size(); i++)
 	{
-		cout << history[i];
+		cout << history[i] << endl;
 	}
 }
 
@@ -74,7 +74,7 @@ void Customer::returnMedia(DVD * movie, string transaction)
 	{
 		if (holding[i] == movie)
 		{
-			delete holding[i];
+			//delete holding[i];
 			holding[i] = NULL;
 			addTransaction(transaction);
 			done = true;

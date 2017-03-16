@@ -137,6 +137,11 @@ bool Classic::setOtherStock(Classic* dupe)
 	return true;
 }
 
+bool Classic::isEqual(const DVD & toCompare) const
+{
+	return (getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
+}
+
 Classic* Classic::getOtherStock(void)
 {
 	return otherStock;
