@@ -29,6 +29,7 @@ bool Customer::setData(ifstream & infile)
 
 void Customer::displayHistory(void) const
 {
+	cout << "History for: " << firstName << " " << lastName << endl;
 	for (int i = 0; i < history.size(); i++)
 	{
 		cout << history[i];
