@@ -53,3 +53,12 @@ bool transactionHistory::setCustomerID(int input)
 		return false;
 	}
 }
+
+string transactionHistory::toString(void) const
+{
+	string transaction = "H ";
+	transaction += customerID;
+	return transaction;
+}
+
+

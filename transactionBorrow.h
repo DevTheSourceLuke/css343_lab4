@@ -131,6 +131,8 @@ public:
 
 	bool setDate(int inputY, int inputM);
 
+	string toString(void) const;
+
 
 private:
 	int customerID = 0;

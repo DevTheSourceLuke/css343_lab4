@@ -26,8 +26,7 @@ public:
 	transactionReturn(void);							//default no-args constructor
 	~transactionReturn(void);							//destructor
 
-	bool setData(ifstream& infile);
-	void passStructures(HashTable* c, vector<BinarySearchTree<DVD>*>* i);
+	bool setData(ifstream& infile);	
 	void displayTransaction(void) const;
 	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
 
@@ -40,6 +39,7 @@ public:
 	string getDirector(void) const;
 	string getTitle(void) const;
 	string getActor(void) const;
+	string toString(void) const;
 
 
 	/*------------------------------------------------------------------------------------------------

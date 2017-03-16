@@ -22,6 +22,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
 #include "hashtable.h"
 #include "binarysearchtree.h"
 

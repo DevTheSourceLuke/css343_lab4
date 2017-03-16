@@ -29,6 +29,7 @@ public:
 	void passCustomers(HashTable* c);
 	void displayTransaction(void) const;
 	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
+	string toString(void) const;
 
 	//getters
 	int getCustomerID(void) const;

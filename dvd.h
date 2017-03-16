@@ -1,9 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Boyer, Destiny
-					Bushey, Luke
+	Authors:		Bushey, Luke
 					King, Garret
-					Selin, Zach
 
 	Created:		2/21/2017
 	Modified:		3/1/2017
