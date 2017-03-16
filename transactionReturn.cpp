@@ -88,24 +88,24 @@ void transactionReturn::displayTransaction(void) const
 string transactionReturn::toString(void) const
 {
 	string transaction = "R ";
-	transaction += customerID + " ";
-	transaction += genre + " ";
+	transaction += to_string(getCustomerID()) + " ";
+	transaction += getGenre() + " ";
 
 	switch (genre)
 	{
 	case 'F':
-		transaction += title + ", ";
-		transaction += year;
+		transaction += getTitle() + ", ";
+		transaction += to_string(getYear());
 		break;
 
 	case 'D':
-		transaction += director + ", ";
-		transaction += title + ",";
+		transaction += getDirector() + ", ";
+		transaction += getTitle() + ",";
 		break;
 	case 'C':
-		transaction += month + " ";
-		transaction += year + " ";
-		transaction += actor;
+		transaction += to_string(getMonth()) + " ";
+		transaction += to_string(getYear()) + " ";
+		transaction += getActor();
 		break;
 	}
 
