@@ -17,7 +17,11 @@ This class represents a Transaction affects the store's customer's Return.
 #include <string>
 #include <vector>
 #include "dvd.h"
+#include "DVDClassic.h"
+#include "DVDComedy.h"
+#include "DVDDrama.h"
 #include "transaction.h"
+
 
 class transactionReturn : public Transaction {
 

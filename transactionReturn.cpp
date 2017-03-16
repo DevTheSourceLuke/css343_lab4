@@ -121,7 +121,71 @@ string transactionReturn::toString(void) const
 
 void transactionReturn::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
-	cout << "Processing....." << endl;
+	Customer* temp = NULL;
+	customers.getCustomer(getCustomerID());
+	if (temp == NULL)
+	{
+		cout << "No Customer with this id exists: " << getCustomerID() << endl;
+		delete temp;
+		temp = NULL;
+		return;
+	}
+
+	DVD target;
+	DVD* returned = NULL;
+
+	switch (getGenre())
+	{
+	case 'C':
+		target = Classic();
+		target.setMonth(getMonth());
+		target.setYear(getYear());
+		target.setActor(getActor());
+		inventory[2]->retrieve(target, returned);
+		if (returned == NULL)
+		{
+			cout << "This movie could not be found: " << getMonth() << " " << getYear() << " " << getActor() << endl;
+		}
+		else
+		{
+			temp->returnMedia(returned, toString());
+		}
+		break;
+
+	case 'D':
+		target = Drama();
+		target.setDirector(getDirector());
+		target.setTitle(getTitle());
+		inventory[1]->retrieve(target, returned);
+		if (returned == NULL)
+		{
+			cout << "This movie could not be found: " << getTitle() << " " << getDirector() << endl;
+		}
+		else
+		{
+			temp->returnMedia(returned, toString());
+		}
+		break;
+
+	case 'F':
+		target = Comedy();
+		target.setTitle(getTitle());
+		target.setYear(getYear());
+		inventory[0]->retrieve(target, returned);
+		if (returned == NULL)
+		{
+			cout << "This movie could not be found: " << getTitle() << " " << getYear() << endl;
+		}
+		else
+		{
+			temp->returnMedia(returned, toString());
+		}
+		break;
+
+	default:
+		cout << "No such genre available." << endl;
+		break;
+	}
 }
 
 int transactionReturn::getMonth(void) const

@@ -195,7 +195,7 @@ void BinarySearchTree<NodeData>::displayHelper(Node* current) const {
 	}
 	else {
 		displayHelper(current->left);
-		current->data->toString();
+		current->data->display();
 		displayHelper(current->right);
 	}
 };

@@ -30,8 +30,6 @@ public:
 
 	bool setData(ifstream& infile);
 
-	void passInventory(vector<BinarySearchTree<DVD>*>* i);
-
 	void displayTransaction(void) const;
 
 private:

@@ -19,11 +19,6 @@ bool transactionHistory::setData(ifstream & infile)
 	return setCustomerID(id);
 }
 
-void transactionHistory::passCustomers(HashTable * c)
-{
-	customers = c;
-}
-
 void transactionHistory::displayTransaction(void) const
 {
 	cout << getTransactionType() << " " << getCustomerID() << endl;
@@ -32,7 +27,19 @@ void transactionHistory::displayTransaction(void) const
 void transactionHistory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
 
-	cout << "This is a transaction!!!" << endl;
+	Customer* temp = NULL;
+	customers.getCustomer(getCustomerID());
+	if (temp == NULL)
+	{
+		cout << "No Customer with this id exists: " << getCustomerID() << endl;
+		delete temp;
+		temp = NULL;
+	}
+	else
+	{
+		temp->displayHistory();
+		temp = NULL;
+	}
 }
 
 int transactionHistory::getCustomerID(void) const

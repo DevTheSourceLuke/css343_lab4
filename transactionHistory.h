@@ -26,7 +26,6 @@ public:
 	~transactionHistory(void);							//destructor
 
 	bool setData(ifstream& infile);
-	void passCustomers(HashTable* c);
 	void displayTransaction(void) const;
 	void processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory);
 	string toString(void) const;

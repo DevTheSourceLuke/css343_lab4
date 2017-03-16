@@ -107,6 +107,8 @@ public:
 	------------------------------------------------------------------------------------------------*/
 
 	bool setYear(int input);
+
+	virtual bool setMonth(int input);
 	
 	/*------------------------------------------------------------------------------------------------
 
@@ -124,6 +126,8 @@ public:
 	bool adjustInventory(int input);
 
 	bool setGenre(char input);
+
+	virtual bool setActor(string input);
 
 	//overloaded comparison operators
 	virtual bool operator==(const DVD& toCompare) const;

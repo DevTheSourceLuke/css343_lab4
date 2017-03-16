@@ -14,7 +14,10 @@ transactionInventory::~transactionInventory(void)
 
 void transactionInventory::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
-	cout << "This is a transaction!!!" << endl;
+	for (int i = 0; i < inventory.size(); i++)
+	{
+		inventory[i]->display();
+	}
 }
 
 bool transactionInventory::setData(ifstream & infile)
@@ -22,10 +25,6 @@ bool transactionInventory::setData(ifstream & infile)
 	return true;
 }
 
-void transactionInventory::passInventory(vector<BinarySearchTree<DVD>*>* i)
-{
-	inventory = i;
-}
 
 void transactionInventory::displayTransaction(void) const
 {

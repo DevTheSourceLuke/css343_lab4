@@ -93,7 +93,20 @@ bool DVD::setYear(int input)
 	}
 	else
 	{
-		cout << "Invalic Year: " << input << endl;
+		cout << "Invalid Year: " << input << endl;
+		return false;
+	}
+}
+
+bool DVD::setMonth(int input)
+{
+	if (input > 0 && input <= 12)
+	{
+		year = input;
+		return true;
+	}
+	else
+	{
 		return false;
 	}
 }
@@ -115,6 +128,18 @@ bool DVD::adjustInventory(int input)
 bool DVD::setGenre(char input)
 {
 	if (input == ' ')
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool DVD::setActor(string input)
+{
+	if (input == " ")
 	{
 		return false;
 	}
