@@ -21,61 +21,54 @@ bool transactionReturn::setData(ifstream & infile)
 	char media, type;
 
 	infile >> id >> media >> type;
-	if (setMediaType(media))
+
+	if (setGenre(type) && setMediaType(media) && setCustomerID(id))
 	{
-		if (setGenre(type))
+		switch (type)
 		{
-			switch (type)
+		case 'F':
+			getline(infile, item1, ',');
+			infile >> num1;
+
+			if (setTitle(item1) && setYear(num1))
 			{
-			case 'F':
-				getline(infile, item1, ',');
-				infile >> num1;
-
-				if (setTitle(item1) && setYear(num1))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-
-			case 'D':
-				getline(infile, item1, ',');
-				getline(infile, item2, ',');
-
-				if (setDirector(item1) && setTitle(item2))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-
-				break;
-
-			case 'C':
-				infile >> num1 >> num2 >> item1 >> item2;
-
-				if (setDate(num2, num1) && setActor(item1 + " " + item2))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-
-				break;
-
-			default:
-				infile.ignore(1000000, '\n');
+				return true;
+			}
+			else
+			{
 				return false;
 			}
-		}
-		else
-		{
+
+		case 'D':
+			getline(infile, item1, ',');
+			getline(infile, item2, ',');
+
+			if (setDirector(item1) && setTitle(item2))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+			break;
+
+		case 'C':
+			infile >> num1 >> num2 >> item1 >> item2;
+
+			if (setDate(num2, num1) && setActor(item1 + " " + item2))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+			break;
+
+		default:
 			infile.ignore(1000000, '\n');
 			return false;
 		}
