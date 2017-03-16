@@ -115,7 +115,7 @@ string transactionReturn::toString(void) const
 void transactionReturn::processTransaction(HashTable& customers, vector<BinarySearchTree<DVD>*>& inventory)
 {
 	Customer* temp = NULL;
-	customers.getCustomer(getCustomerID());
+	temp = customers.getCustomer(getCustomerID());
 	if (temp == NULL)
 	{
 		cout << "No Customer with this id exists: " << getCustomerID() << endl;
