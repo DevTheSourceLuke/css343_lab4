@@ -22,8 +22,9 @@ bool Classic::setData(ifstream & infile)
 	getline(infile, title, ',');
 	infile >> first >> last >> month >> year;
 
-	if (setActor(first + " " + last) == true && setDirector(director) == true && setMonth(month) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true && setOtherStock(this) == true)
+	if (setActor(first + " " + last) == true && setDirector(director) == true && setMonth(month) == true && setYear(year) == true && setTitle(title) == true && adjustInventory(stock) == true)
 	{	
+		setOtherStock(this);
 		return true;
 	}
 	else
