@@ -32,8 +32,7 @@ void StoreManager::processTransactions()
 {
 	while (pending.size() != 0)
 	{
-	    //pending.front().processTransaction();
-		cout << "Perform Transaction!!!" << endl;
+	    pending.front()->processTransaction(customers, inventory);
 		completed.push(pending.front());
 		pending.pop();
 	}
