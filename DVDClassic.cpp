@@ -51,8 +51,7 @@ int Classic::getMonth(void) const
 
 bool Classic::operator==(const DVD & toCompare) const
 {
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0
-		&& getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
+	return (getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
 }
 
 bool Classic::operator!=(const DVD & toCompare) const

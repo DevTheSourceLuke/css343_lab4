@@ -48,7 +48,7 @@ int DVD::getYear(void) const
 
 char DVD::getGenre(void) const
 {
-	return 0;
+	return genre;
 }
 
 int DVD::getMonth(void) const
@@ -151,7 +151,20 @@ bool DVD::setActor(string input)
 
 bool DVD::operator==(const DVD & toCompare) const
 {
-	return false;
+	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
+	/*
+	switch (getGenre())
+	{
+	case 'F':
+		return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
+	case 'C':
+		return (getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
+	case 'D':
+		return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
+	default:
+		cout << "False" << endl;
+		return false;
+	}*/
 }
 
 bool DVD::operator!=(const DVD & toCompare) const

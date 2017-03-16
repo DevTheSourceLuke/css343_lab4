@@ -29,10 +29,10 @@ class Drama : public DVD {
 	bool setData(ifstream& infile);
 
 	//overloaded comparison operators
-	virtual bool operator==(const DVD& toCompare) const;
-	virtual bool operator!=(const DVD& toCompare) const;
-	virtual bool operator<(const DVD& toCompare) const;
-	virtual bool operator>(const DVD& toCompare) const;
+	bool operator==(const DVD& toCompare) const;
+	bool operator!=(const DVD& toCompare) const;
+	bool operator<(const DVD& toCompare) const;
+	bool operator>(const DVD& toCompare) const;
 
 };
 

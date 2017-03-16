@@ -35,7 +35,7 @@ bool Comedy::setData(ifstream & infile)
 
 bool Comedy::operator==(const DVD & toCompare) const
 {
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0 && getYear() == toCompare.getYear());
+	return (getTitle().compare(toCompare.getTitle()) != 0 && getDirector().compare(toCompare.getDirector()) != 0);
 }
 
 bool Comedy::operator!=(const DVD & toCompare) const
