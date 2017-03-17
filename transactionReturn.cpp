@@ -146,6 +146,7 @@ void transactionReturn::processTransaction(HashTable& customers, BinarySearchTre
 	Comedy targetF = Comedy();
 	Comedy* returnedF = NULL;
 
+	//Check genre then set the target and find in the inventory.  If found, adjust the inventory and send to customer.
 	switch (getGenre())
 	{
 	case 'C':

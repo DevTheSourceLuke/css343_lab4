@@ -32,6 +32,7 @@ bool transactionBorrow::setData(ifstream & infile)
 
 	if (setGenre(type) && setMediaType(media) && setCustomerID(id))
 	{
+		//Select which type of data to save.
 		switch (type)
 		{
 		case 'F':
@@ -138,6 +139,7 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 
 	//DVD target;
 	//DVD* returned = NULL;
+	//The program was throwing errors when intializing values in the switch statement.
 	bool found = false;
 	Classic targetC = Classic();
 	Classic* returnedC = NULL;
@@ -147,6 +149,7 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 	Comedy targetF = Comedy();
 	Comedy* returnedF = NULL;
 
+	//Check genre then set the target and find in the inventory.  If found, adjust the inventory and send to customer.
 	switch (getGenre())
 	{
 	case 'C':
@@ -163,6 +166,7 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 		{
 			if (!returnedC->adjustInventory(-1))
 			{
+				//Check the same movies defined by different actors.
 				if (returnedC->getOtherStock() != NULL)
 				{
 					other = returnedC->getOtherStock();

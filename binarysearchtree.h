@@ -1,4 +1,14 @@
 //#pragma once
+
+/*-------------------------------------------------------------------------------------------------
+
+Authors:		Boyer, Destiny
+
+
+This is a binary search tree created by design group member Destiny Boyer.  This file implements a
+templatized binary search tree as decided upon in the design stage for this lab.
+
+-------------------------------------------------------------------------------------------------*/
 #ifndef binarysearchtree_h
 #define binarysearchtree_h
 

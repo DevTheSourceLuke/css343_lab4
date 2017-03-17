@@ -1,10 +1,11 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Bushey, Luke
-					King, Garret
+	Authors:		
+	Boyer, Destiny
+	Bushey, Luke
+	King, Garret
+	Selin, Zach
 
-	Created:		2/21/2017
-	Modified:		3/1/2017
 
 	This class represents a DVD object. Each object stores information about the title, director,
 	release year, and number of copies in inventory. Getter and setter methods are available

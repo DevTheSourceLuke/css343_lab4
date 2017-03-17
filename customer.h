@@ -3,9 +3,6 @@
 	Authors:		Bushey, Luke
 					King, Garret
 
-	Created:		2/21/2017
-	Modified:		3/1/2017
-
 	This class represents a customer object. Each object stores the customer's first and last
 	names, a unique customer ID, a history of the customer's transactions, and a queue of
 	which media items the customer is holding (still has checked out). This class has the

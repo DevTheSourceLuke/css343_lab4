@@ -1,10 +1,9 @@
 /*-------------------------------------------------------------------------------------------------
 
-Authors:		Bushey, Luke
+Authors:		
+Bushey, Luke
 King, Garret
 
-Created:		2/21/2017
-Modified:		3/1/2017
 
 This class represents a Transaction affects the store's customer's Borrow.
 
@@ -129,9 +128,40 @@ public:
 
 	bool setActor(string input);
 
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for year. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- input cannot greater than the current year plus one or less than 1927 (first tv made).
+
+	POSTCONDITIONS:
+	- sets year to input
+
+	------------------------------------------------------------------------------------------------*/
+
 	bool setYear(int input);
 
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for year and month. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- inputY cannot greater than the current year plus one or less than 1927( first tv made).
+	- inputM cannot be greater than 12 or less than 0.
+
+	POSTCONDITIONS:
+	- sets year to input
+
+	------------------------------------------------------------------------------------------------*/
+
 	bool setDate(int inputY, int inputM);
+
+	/*------------------------------------------------------------------------------------------------
+
+	Returns the transaction values as a string.
+
+	------------------------------------------------------------------------------------------------*/
 
 	string toString(void) const;
 

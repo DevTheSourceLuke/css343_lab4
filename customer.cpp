@@ -83,7 +83,7 @@ void Customer::returnMedia(DVD * movie, string transaction)
 	{
 		if (holding[i] == movie)
 		{
-			//delete holding[i];
+			//check if the customer has the movie to return it.
 			holding[i] = NULL;
 			addTransaction(transaction);
 			done = true;

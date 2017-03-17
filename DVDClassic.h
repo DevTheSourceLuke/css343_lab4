@@ -1,12 +1,10 @@
 /*-------------------------------------------------------------------------------------------------
 
-Authors:		Boyer, Destiny
+Authors:		
+Boyer, Destiny
 Bushey, Luke
 King, Garret
 Selin, Zach
-
-Created:		2/21/2017
-Modified:		3/1/2017
 
 DVD child class to represent DVD's of type Classic. Classic DVD objects are a special
 case and require uniquely overloaded comparison operators for insertion into the
@@ -68,6 +66,19 @@ public:
 	------------------------------------------------------------------------------------------------*/
 
 	bool setMonth(int input);
+
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for otherStock. Returns a bool indicating success. otherStock holds a pointer to 
+	the same movie defined by a different actor.
+
+	PRECONDITIONS:
+	- input cannot be NULL
+
+	POSTCONDITIONS:
+	- sets otherStock equal to the input
+
+	------------------------------------------------------------------------------------------------*/
 
 	bool setOtherStock(Classic* dupe);
 

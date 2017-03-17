@@ -1,10 +1,8 @@
 /*-------------------------------------------------------------------------------------------------
 
-Authors:		Bushey, Luke
+Authors:		
+Bushey, Luke
 King, Garret
-
-Created:		2/21/2017
-Modified:		3/1/2017
 
 This class represents a Transaction affects the store's inventory.
 

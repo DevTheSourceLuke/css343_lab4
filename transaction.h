@@ -1,12 +1,10 @@
 /*-------------------------------------------------------------------------------------------------
 
-	Authors:		Boyer, Destiny
-					Bushey, Luke
-					King, Garret
-					Selin, Zach
-
-	Created:		2/21/2017
-	Modified:		3/1/2017
+	Authors:		
+	Boyer, Destiny
+	Bushey, Luke
+	King, Garret
+	Selin, Zach
 
 	This class represents a Transction object. Each object stores information about the Transaction
 	type and Customer ID associated with the Transaction. This class has the functionality to take
@@ -49,6 +47,12 @@ public:
 
 	virtual bool setData(ifstream& infile);
 
+	/*------------------------------------------------------------------------------------------------
+
+	Method takes in the data structures holding the invneotry and customers and then performs the
+	relevant transactions.
+
+	------------------------------------------------------------------------------------------------*/
 	virtual void processTransaction(HashTable& customers, BinarySearchTree<Comedy>* inventoryF, BinarySearchTree<Drama>* inventoryD, BinarySearchTree<Classic>* inventoryC);
 
 	/*------------------------------------------------------------------------------------------------

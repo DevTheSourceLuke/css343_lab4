@@ -8,6 +8,9 @@ Modified:		3/1/2017
 
 This class represents a Transaction affects the store's customer's Return.
 
+Assumption: If a customer borrowed a classic movie but had to take one defined by a different actor
+the movie that will be returned will be the one the customer actually got.
+
 -------------------------------------------------------------------------------------------------*/
 
 //#pragma once
@@ -131,7 +134,32 @@ public:
 
 	bool setActor(string input);
 
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for year. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- input cannot greater than the current year plus one or less than 1927 (first tv made).
+
+	POSTCONDITIONS:
+	- sets year to input
+
+	------------------------------------------------------------------------------------------------*/
+
 	bool setYear(int input);
+
+	/*------------------------------------------------------------------------------------------------
+
+	Setter method for year and month. Returns a bool indicating success.
+
+	PRECONDITIONS:
+	- inputY cannot greater than the current year plus one or less than 1927( first tv made).
+	- inputM cannot be greater than 12 or less than 0.
+
+	POSTCONDITIONS:
+	- sets year to input
+
+	------------------------------------------------------------------------------------------------*/
 
 	bool setDate(int inputY, int inputM);
 

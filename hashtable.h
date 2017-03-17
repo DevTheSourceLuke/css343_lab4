@@ -3,8 +3,6 @@
 	Authors:		Bushey, Luke
 					King, Garret
 
-	Created:		2/21/2017
-	Modified:		3/1/2017
 
 	HashTable class that has the functionality to populate a HashTable, retrieve items,
 	and insert items.

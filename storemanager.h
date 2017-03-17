@@ -1,10 +1,10 @@
 /*-------------------------------------------------------------------------------------------------
-Authors:		Boyer, Destiny
+Authors:		
+Boyer, Destiny
 Bushey, Luke
 King, Garret
 Selin, Zach
-Created:		2/21/2017
-Modified:		3/1/2017
+
 StoreManager is a Manager class that populates data members and manages the interactions
 between customers and inventory items. Customers are stored in a HashTable, Transactions
 in a queue, and Inventory items in a vector of BinarySearchTree pointers.

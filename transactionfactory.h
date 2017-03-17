@@ -1,12 +1,10 @@
 /*-------------------------------------------------------------------------------------------------
 	
-	Authors:		Boyer, Destiny
-					Bushey, Luke
-					King, Garret
-					Selin, Zach
-
-	Created:		2/21/2017
-	Modified:		3/1/2017
+	Authors:		
+	Boyer, Destiny
+	Bushey, Luke
+	King, Garret
+	Selin, Zach
 
 	This is a factory class to create transaction objects at runtime based on the type of
 	transaction. Different transaction types have different responsibilities in performing

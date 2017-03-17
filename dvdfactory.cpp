@@ -31,6 +31,7 @@ void DVDFactory::createDVDs(ifstream & infile, BinarySearchTree<Comedy>* invento
 			{
 				if (!inventoryF->insert(tempF))
 				{
+					//Adjust inventory
 					inventoryF->retrieve(*(tempF), returnedF);
 					if (returnedF != NULL)
 					{
@@ -55,6 +56,7 @@ void DVDFactory::createDVDs(ifstream & infile, BinarySearchTree<Comedy>* invento
 			{
 				if (!inventoryD->insert(tempD))
 				{
+					//Adjust inventory
 					inventoryD->retrieve(*(tempD), returnedD);
 					if (returnedD != NULL)
 					{
@@ -79,6 +81,7 @@ void DVDFactory::createDVDs(ifstream & infile, BinarySearchTree<Comedy>* invento
 			{
 				if (!inventoryC->insert(tempC))
 				{
+					//Adjust inventory
 					inventoryC->retrieve(*(tempC), returnedC);
 					if (returnedC != NULL)
 					{
@@ -90,6 +93,7 @@ void DVDFactory::createDVDs(ifstream & infile, BinarySearchTree<Comedy>* invento
 				}
 				else
 				{
+					//Add connection between movies if they are the same with different actors.
 					bool found = false;
 					for (int i = 0; i < sameMovie.size(); i++)
 					{

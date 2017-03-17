@@ -4,8 +4,6 @@ Authors
 Bushey, Luke
 King, Garret
 
-Created:		3/13/2017
-Modified:		3/13/2017
 
 This is a factory class to create customer objects at runtime.
 
