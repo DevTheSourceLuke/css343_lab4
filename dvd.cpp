@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "dvd.h"
 
 DVD::DVD(void)
@@ -22,7 +22,7 @@ bool DVD::setData(ifstream & inFile)
 
 void DVD::display(void) const
 {
-	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getYear() << ", " << getInventory() << endl;
+	cout << "Movie : " << getInventory() << ", " << getDirector() << ", " << getTitle() <<  ", " << getYear() << endl;
 }
 
 string DVD::getTitle(void) const

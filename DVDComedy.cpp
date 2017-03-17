@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "DVDComedy.h"
 
 Comedy::Comedy(void)
@@ -17,8 +17,9 @@ bool Comedy::setData(ifstream & infile)
 
 	infile.ignore(1);
 	infile >> stock;
-	infile.ignore(1);
+	infile.ignore(2);
 	getline(infile, director, ',');
+	infile.ignore(1);
 	getline(infile, title, ',');
 	infile >> year;
 
@@ -33,15 +34,20 @@ bool Comedy::setData(ifstream & infile)
 	}
 }
 
+void Comedy::display(void) const
+{
+	cout << "Movie : F, " << getInventory() << ", " << getDirector() << ", " << getTitle() << ", " << getYear() << endl;
+}
+
 bool Comedy::operator==(const DVD & toCompare) const
 {
 	if (toCompare.getTitle().front() == ' ')
 	{
 		string title = toCompare.getTitle();
 		title = title.substr(1, title.length());
-		return (getTitle().compare(title) != 0 && getYear() == toCompare.getYear());
+		return (getTitle().compare(title) == 0 && getYear() == toCompare.getYear());
 	}
-	return (getTitle().compare(toCompare.getTitle()) != 0 && getYear() == toCompare.getYear());
+	return (getTitle().compare(toCompare.getTitle()) == 0 && getYear() == toCompare.getYear());
 }
 
 bool Comedy::operator!=(const DVD & toCompare) const

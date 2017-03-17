@@ -11,15 +11,14 @@ DVDFactory creates DVD objects but it is the sole responsibility of the DVD obje
 how to properly handle data in order to populate data members.
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef dvdfactory_h
 #define dvdfactory_h
 
-#include <iostream>
-#include <set>
+//#include <iostream>
 #include <vector>
-#include "dvd.h"
-#include "hashtable.h"
+//#include "dvd.h"
+//#include "hashtable.h"
 #include "binarysearchtree.h"
 #include "DVDComedy.h"
 #include "DVDClassic.h"

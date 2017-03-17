@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "transactionBorrow.h"
 
 transactionBorrow::transactionBorrow(void)
@@ -35,6 +35,7 @@ bool transactionBorrow::setData(ifstream & infile)
 		switch (type)
 		{
 		case 'F':
+			infile.ignore(1);
 			getline(infile, item1, ',');
 			infile >> num1;
 
@@ -48,7 +49,9 @@ bool transactionBorrow::setData(ifstream & infile)
 			}
 
 		case 'D':
+			infile.ignore(1);
 			getline(infile, item1, ',');
+			infile.ignore(1);
 			getline(infile, item2, ',');
 
 			if (setDirector(item1) && setTitle(item2))
@@ -135,8 +138,10 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 
 	//DVD target;
 	//DVD* returned = NULL;
+	bool found = false;
 	Classic targetC = Classic();
 	Classic* returnedC = NULL;
+	Classic* other = NULL;
 	Drama targetD = Drama();
 	Drama* returnedD = NULL;
 	Comedy targetF = Comedy();
@@ -156,7 +161,37 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
-			temp->borrowMedia(returnedC, toString());
+			if (!returnedC->adjustInventory(-1))
+			{
+				if (returnedC->getOtherStock() != NULL)
+				{
+					other = returnedC->getOtherStock();
+				}
+				while (other != returnedC && !found)
+				{
+					if (returnedC->getOtherStock() != NULL)
+					{
+						other = returnedC->getOtherStock();
+					}
+					
+					if (other->adjustInventory(-1))
+					{
+						found = true;
+						setActor(other->getActor());
+						cout << "Borrowing Same Movie with Different Actor." << endl;
+						temp->borrowMedia(other, toString());
+						return;
+					}
+				}
+
+
+				cout << "Movie Not Borrowed" << endl;
+				return;
+			}
+			else
+			{
+				temp->borrowMedia(returnedC, toString());
+			}
 		}
 		break;
 
@@ -171,7 +206,15 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
-			temp->borrowMedia(returnedD, toString());
+			if (!returnedD->adjustInventory(-1))
+			{
+				cout << "Movie Not Borrowed" << endl;
+				return;
+			}
+			else
+			{
+				temp->borrowMedia(returnedD, toString());
+			}
 		}
 		break;
 
@@ -186,7 +229,15 @@ void transactionBorrow::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
-			temp->borrowMedia(returnedF, toString());
+			if (!returnedF->adjustInventory(-1))
+			{
+				cout << "Movie Not Borrowed" << endl;
+				return;
+			}
+			else
+			{
+				temp->borrowMedia(returnedF, toString());
+			}	
 		}
 		break;
 

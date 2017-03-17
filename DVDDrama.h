@@ -12,7 +12,7 @@
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef drama_h
 #define drama_h
 
@@ -27,6 +27,7 @@ class Drama : public DVD {
 	~Drama(void);				//destructor
 
 	bool setData(ifstream& infile);
+	virtual void display(void) const;
 
 
 	//overloaded comparison operators

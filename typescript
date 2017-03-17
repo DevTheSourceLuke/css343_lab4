@@ -1,0 +1,188 @@
+Script started on Thu 16 Mar 2017 10:42:40 PM PDT
+gbk4@uw1-320-06:~$ exitg++ -std=c++11 binarysearchtree.h DVDComedy.h DVDComedy.cpp customer.h customer.cpp customerfactory.h customerfactory.cpp dvd.h dvd.cpp DVDClassic.h DVDClassic.cpp  DVDDrama.h DVDDDrama.cpp dvdfactory.h dvdfactory.cpp hashtable.h hashtable.cpp storemanager.h storemanager.cpp transaction.h transaction.cpp transactionBorrow.h transactionBorrow.cpp transactionfactory.h transacttionfactory.cpp transactionHistory.h transactionHistory.cpp transactionReturn.h transactionReturn.cpp transactionInventory.h transactionInventory.cpp Lab4.cpp -g -o 343Lab4
+gbk4@uw1-320-06:~$ g++ -std=c++11 binarysearchtree.h DVDComedy.h DVDComedy.cpp customer.h customer.cpp customerfactory.h customerfactory.cpp dvd.h dvd.cpp DVDClassic.h DVDClassic.cpp  DVDDrama.h DVDDDrama.cpp dvdfactory.h dvdfactory.cpp hashtable.h hashtable.cpp storemanager.h storemanager.cpp transaction.h transaction.cpp transactionBorrow.h transactionBorrow.cpp transactionfactory.h transacttionfactory.cpp transactionHistory.h transactionHistory.cpp transactionReturn.h transactionReturn.cpp transactionInventory.h transactionInventory.cpp Lab4.cpp -g -o 343Lab4[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg++ -std=c++11 binarysearchtree.h DVDComedy.h DVDComedy.cpp customer.h customer.cpp customerfactory.h customerfactory.cpp dvd.h dvd.cpp DVDClassic.h DVDClassic.cpp  DVDDrama.h DVDDDrama.cpp dvdfactory.h dvdfactory.cpp hashtable.h hashtable.cpp storemanager.h storemanager.cpp transaction.h transaction.cpp transactionBorrow.h transactionBorrow.cpp transactionfactory.h transacttionfactory.cpp transactionHistory.h transactionHistory.cpp transactionReturn.h transactionReturn.cpp transactionInventory.h transactionInventory.cpp Lab4.cpp -g -o 343Lab4[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pndvalgrind --leak-check=full ./343Lab4
+==11363== Memcheck, a memory error detector
+==11363== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==11363== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==11363== Command: ./343Lab4
+==11363== 
+
+Creating Customers...
+
+Creating Inventory...
+Invalid Movie Genre: Z
+Invalid Movie Genre: Z
+
+Creating Transactions...
+Make transactions.
+Invalid Movie Type: Z
+Invalid Transaction: X
+Invalid Transaction: Z
+Invalid Media Type: Z
+
+Processing Transactions...
+
+Printing Inventory: 
+Movie : C, 10, George Cukor, Holiday, Katherine Hepburn 9 1938
+Movie : C, 10, George Cukor, Holiday, Cary Grant 9 1938
+Movie : C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
+Movie : C, 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
+Movie : C, 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
+Movie : C, 10, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
+Movie : C, 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
+Movie : C, 10, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Movie : C, 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
+Movie : C, 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
+Movie : C, 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Movie : C, 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
+Movie : C, 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
+Movie : C, 10, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Movie : C, 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Movie : D, 10, Barry Levinson, Good Morning Vietnam, 1988
+Movie : D, 10, Clint Eastwood, Unforgiven, 1992
+Movie : D, 10, Gus Van Sant, Good Will Hunting, 2000
+Movie : D, 10, Jonathan Demme, Silence of the Lambs, 1991
+Movie : D, 10, Nancy Savoca, Dogfight, 1991
+Movie : D, 10, Phillippe De Broca, King of Hearts, 1967
+Movie : D, 10, Steven Spielberg, Schindler's List, 1993
+Movie : F, 10, Woody Allen, Annie Hall, 1977
+Movie : F, 10, Joel Coen, Fargo, 1996
+Movie : F, 10, John Landis, National Lampoon's Animal House, 1978
+Movie : F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+Movie : F, 20, Nora Ephron, Sleepless in Seattle, 1993
+Movie : F, 10, Rob Reiner, When Harry Met Sally, 1989
+Movie : F, 10, Nora Ephron, You've Got Mail, 1998
+
+History for: Minnie Mouse
+
+
+History for: Freddie Frog
+
+
+History for: Wally Wacky
+
+This movie could not be found: 5 1940 Cary Grant
+This movie could not be found: 9 1938 Cary Grant
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+No Customer with this id exists: 1234
+This movie could not be found: Bogus Title 2001
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+Inventory for Harold and Maude would be -1
+Bud Cort Bud Cort
+Borrowing Same Movie with Different Actor.
+This movie could not be found: Bogus Title Steven Spielberg
+
+Printing Inventory: 
+Movie : C, 10, George Cukor, Holiday, Katherine Hepburn 9 1938
+Movie : C, 10, George Cukor, Holiday, Cary Grant 9 1938
+Movie : C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
+Movie : C, 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
+Movie : C, 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
+Movie : C, 9, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
+Movie : C, 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
+Movie : C, 9, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Movie : C, 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
+Movie : C, 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
+Movie : C, 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Movie : C, 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
+Movie : C, 8, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
+Movie : C, 0, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Movie : C, 4, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Movie : D, 9, Barry Levinson, Good Morning Vietnam, 1988
+Movie : D, 9, Clint Eastwood, Unforgiven, 1992
+Movie : D, 9, Gus Van Sant, Good Will Hunting, 2000
+Movie : D, 9, Jonathan Demme, Silence of the Lambs, 1991
+Movie : D, 8, Nancy Savoca, Dogfight, 1991
+Movie : D, 9, Phillippe De Broca, King of Hearts, 1967
+Movie : D, 9, Steven Spielberg, Schindler's List, 1993
+Movie : F, 9, Woody Allen, Annie Hall, 1977
+Movie : F, 9, Joel Coen, Fargo, 1996
+Movie : F, 9, John Landis, National Lampoon's Animal House, 1978
+Movie : F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+Movie : F, 19, Nora Ephron, Sleepless in Seattle, 1993
+Movie : F, 9, Rob Reiner, When Harry Met Sally, 1989
+Movie : F, 8, Nora Ephron, You've Got Mail, 1998
+
+History for: Minnie Mouse
+B 1000 D Barry Levinson, Good Morning Vietnam,
+B 1000 C 5 1940 Katherine Hepburn
+B 1000 D Gus Van Sant, Good Will Hunting,
+B 1000 C 3 1971 Ruth Gordon
+
+
+History for: Mickey Mouse
+B 1111 C 2 1971 Malcolm McDowell
+B 1111 C 3 1971 Ruth Gordon
+B 1111 C 10 1941 Humphrey Bogart
+
+
+History for: Freddie Frog
+B 5000 C 3 1971 Ruth Gordon
+R 5000 C 3 1971 Ruth Gordon
+B 5000 C 3 1971 Ruth Gordon
+R 5000 C 3 1971 Ruth Gordon
+B 5000 C 3 1971 Ruth Gordon
+R 5000 C 3 1971 Ruth Gordon
+B 5000 C 3 1971 Ruth Gordon
+
+
+History for: Wally Wacky
+B 8000 F You've Got Mail, 1998
+R 8000 F You've Got Mail, 1998
+B 8000 C 3 1971 Ruth Gordon
+B 8000 C 3 1971 Ruth Gordon
+B 8000 F National Lampoon's Animal House, 1978
+
+
+History for: Porky Pig
+B 8888 F Annie Hall, 1977
+B 8888 F When Harry Met Sally, 1989
+B 8888 D Jonathan Demme, Silence of the Lambs,
+B 8888 D Nancy Savoca, Dogfight,
+B 8888 C 3 1971 Ruth Gordon
+
+
+History for: Sammy Spider
+B 7777 D Steven Spielberg, Schindler's List,
+B 7777 C 3 1971 Ruth Gordon
+B 7777 C 3 1971 Bud Cort
+
+==11363== 
+==11363== HEAP SUMMARY:
+==11363==     in use at exit: 72,704 bytes in 1 blocks
+==11363==   total heap usage: 1,041 allocs, 1,040 frees, 138,959 bytes allocated
+==11363== 
+==11363== LEAK SUMMARY:
+==11363==    definitely lost: 0 bytes in 0 blocks
+==11363==    indirectly lost: 0 bytes in 0 blocks
+==11363==      possibly lost: 0 bytes in 0 blocks
+==11363==    still reachable: 72,704 bytes in 1 blocks
+==11363==         suppressed: 0 bytes in 0 blocks
+==11363== Reachable blocks (those to which a pointer was found) are not shown.
+==11363== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11363== 
+==11363== For counts of detected and suppressed errors, rerun with: -v
+==11363== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+gbk4@uw1-320-06:~$ valgrind --leak-check=full ./343Lab4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg++ -std=c++11 binarysearchtree.h DVDComedy.h DVDComedy.cpp customer.h customer.cpp customerfactory.h customerfactory.cpp dvd.h dvd.cpp DVDClassic.h DVDClassic.cpp  DVDDrama.h DVDDDrama.cpp dvdfactory.h dvdfactory.cpp hashtable.h hashtable.cpp storemanager.h storemanager.cpp transaction.h transaction.cpp transactionBorrow.h transactionBorrow.cpp transactionfactory.h transacttionfactory.cpp transactionHistory.h transactionHistory.cpp transactionReturn.h transactionReturn.cpp transactionInventory.h transactionInventory.cpp Lab4.cpp -g -o 343Lab4[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+exit
+
+Script done on Thu 16 Mar 2017 10:43:24 PM PDT

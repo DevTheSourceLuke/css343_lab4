@@ -10,7 +10,7 @@ This class represents a Transaction affects the store's customer's history.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactionhistory_h
 #define transactionhistory_h
 

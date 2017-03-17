@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #ifndef binarysearchtree_h
 #define binarysearchtree_h
 
@@ -35,7 +35,6 @@ public:
 	void display(void) const;
 	void clear(void);
 	bool isEmpty(void) const;
-	void buildTree(ifstream& inFile);
 
 private:
 
@@ -46,10 +45,10 @@ private:
 	void displayHelper(Node* current) const;
 	bool retrieveHelper(Node* current, const NodeData& target, NodeData*& retrieved) const;
 };
-
 #endif
 
-
+#ifndef binarysearchtree_cpp
+#define binarysearchtree_cpp
 
 ////////////////////////////////////////////////////////////////////////////////
 //																			  //
@@ -129,30 +128,6 @@ bool BinarySearchTree<NodeData>::isEmpty(void) const {
 };
 
 
-template <typename NodeData>
-void BinarySearchTree<NodeData>::buildTree(ifstream& infile) {
-	NodeData* ptr;
-	bool isValid;	
-
-	for (;;) {
-		ptr = new NodeData;
-		isValid = ptr->setData(infile);
-
-		if (infile.eof()) {
-			delete ptr;
-			break;
-		}
-
-		if (isValid) {
-			insert(ptr);
-		}
-		else {
-			delete ptr;
-		}
-	}
-};
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 //																			  //
@@ -220,3 +195,4 @@ bool BinarySearchTree<NodeData>::retrieveHelper(Node* current, const NodeData& t
 	}
 	return successful;
 };
+#endif

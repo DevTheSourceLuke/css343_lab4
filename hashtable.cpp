@@ -14,10 +14,9 @@ is the responsibility of the Object.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
-#include "stdafx.h"
+//#pragma once
+//#include "stdafx.h"
 #include "hashtable.h"
-
 // Constructor and destructor for hash table
 HashTable::HashTable(void)
 {

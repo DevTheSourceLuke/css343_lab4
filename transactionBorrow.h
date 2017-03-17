@@ -10,7 +10,7 @@ This class represents a Transaction affects the store's customer's Borrow.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactionborrow_h
 #define transactionborrow_h
 

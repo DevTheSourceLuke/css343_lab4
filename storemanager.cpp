@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "storemanager.h"
 
 StoreManager::StoreManager(void)
@@ -9,19 +9,30 @@ StoreManager::StoreManager(void)
 StoreManager::~StoreManager(void)
 {
 	customers.~HashTable();
+	Transaction * temp = NULL;
 	while (!pending.empty())
 	{
+		temp = pending.front();
 		pending.pop();
+		delete temp;
+		temp = NULL;
 	}
 
 	while (!completed.empty())
 	{
+		temp = completed.front();
 		completed.pop();
+		delete temp;
+		temp = NULL;
 	}
+
 
 	inventoryF->clear();
 	inventoryC->clear();
 	inventoryD->clear();
+	delete inventoryC;
+	delete inventoryD;
+	delete inventoryF;
 }
 
 void StoreManager::processTransactions()

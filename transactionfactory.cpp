@@ -1,16 +1,21 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include "transactionfactory.h"
 
 void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*>& pending)
-{	
+{
 	cout << "Make transactions." << endl;
 	Transaction* temp = NULL;
-	
+
 	while (!infile.eof())
 	{
-		char transactionType;
+		char transactionType = '#';
 		infile >> transactionType;
+
+		if (transactionType == '#')
+		{
+			break;
+		}
 
 		switch (transactionType)
 		{
@@ -19,6 +24,10 @@ void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*
 			if (temp->setData(infile))
 			{
 				pending.push(temp);
+			}
+			else
+			{
+				delete temp;
 			}
 			temp = NULL;
 			break;
@@ -29,6 +38,10 @@ void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*
 			{
 				pending.push(temp);
 			}
+			else
+			{
+				delete temp;
+			}
 			temp = NULL;
 			break;
 
@@ -38,6 +51,10 @@ void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*
 			{
 				pending.push(temp);
 			}
+			else
+			{
+				delete temp;
+			}
 			temp = NULL;
 			break;
 
@@ -46,6 +63,10 @@ void TransactionFactory::createTransaction(ifstream & infile, queue<Transaction*
 			if (temp->setData(infile))
 			{
 				pending.push(temp);
+			}
+			else
+			{
+				delete temp;
 			}
 			temp = NULL;
 			break;

@@ -1,4 +1,5 @@
-#include "stdafx.h"
+
+//#include "stdafx.h"
 #include "customer.h"
 
 Customer::Customer(void)
@@ -19,6 +20,10 @@ bool Customer::setData(ifstream & infile)
 	int ID = -1;
 	string first, last = "";
 	infile >> ID >> last >> first;
+	if (ID == -1)
+	{
+		return false;
+	}
 	if (setID(ID) != true || setFirstName(first) != true || setLastName(last) != true)
 	{
 		cout << "Customer not created." << endl;
@@ -37,6 +42,7 @@ void Customer::displayHistory(void) const
 	{
 		cout << history[i] << endl;
 	}
+	cout << endl;
 }
 
 void Customer::displayCustomer(void) const

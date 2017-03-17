@@ -12,16 +12,15 @@ INVARIANTS:
 - Store is set up to handle no more than 10,000 customers
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef storemanager_h
 #define storemanager_h
 
-#include <queue>
-#include "hashtable.h"
-#include "transaction.h"
-#include "dvd.h"
-#include "customer.h"
-#include "binarysearchtree.h"
+//#include <queue>
+//#include "hashtable.h"
+//#include "transaction.h"
+//#include "dvd.h"
+//#include "customer.h"
 #include "customerfactory.h"
 #include "transactionfactory.h"
 #include "dvdfactory.h"

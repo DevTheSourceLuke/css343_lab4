@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "transactionHistory.h"
 
 transactionHistory::transactionHistory(void)
@@ -15,7 +15,7 @@ transactionHistory::~transactionHistory(void)
 
 bool transactionHistory::setData(ifstream & infile)
 {
-	int id;
+	int id = 0;
 	infile >> id;
 	return setCustomerID(id);
 }
@@ -68,5 +68,4 @@ string transactionHistory::toString(void) const
 	transaction += customerID;
 	return transaction;
 }
-
 

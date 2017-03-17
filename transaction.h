@@ -16,7 +16,7 @@
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transaction_h
 #define transaction_h
 

@@ -14,19 +14,19 @@
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactionfactory_h
 #define transactionfactory_h
 
 #include <iostream>
 #include <queue>
 #include "hashtable.h"
-#include "binarysearchtree.h"
+
 #include "transaction.h"
-#include "transactioninventory.h"
-#include "transactionhistory.h"
-#include "transactionborrow.h"
-#include "transactionreturn.h"
+#include "transactionInventory.h"
+#include "transactionHistory.h"
+#include "transactionBorrow.h"
+#include "transactionReturn.h"
 #include "dvd.h"
 
 class TransactionFactory {

@@ -10,7 +10,7 @@ This class represents a Transaction affects the store's customer's Return.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactionreturn_h
 #define transactionreturn_h
 

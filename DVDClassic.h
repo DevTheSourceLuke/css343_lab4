@@ -14,7 +14,7 @@ inventory management data structure and for populating data members.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef classic_h
 #define classic_h
 
@@ -32,6 +32,7 @@ public:
 	void display(void) const;
 	string getActor(void) const;
 	int getMonth(void) const;
+	Classic* getOtherStock(Classic* dupe);
 
 	bool operator==(const DVD& toCompare) const;
 	bool operator!=(const DVD& toCompare) const;

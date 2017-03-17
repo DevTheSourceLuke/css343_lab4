@@ -1,5 +1,6 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "transactionReturn.h"
+
 
 transactionReturn::transactionReturn(void)
 {
@@ -35,6 +36,7 @@ bool transactionReturn::setData(ifstream & infile)
 		switch (type)
 		{
 		case 'F':
+			infile.ignore(1);
 			getline(infile, item1, ',');
 			infile >> num1;
 
@@ -48,7 +50,9 @@ bool transactionReturn::setData(ifstream & infile)
 			}
 
 		case 'D':
+			infile.ignore(1);
 			getline(infile, item1, ',');
+			infile.ignore(1);
 			getline(infile, item2, ',');
 
 			if (setDirector(item1) && setTitle(item2))
@@ -156,6 +160,7 @@ void transactionReturn::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
+			targetC.adjustInventory(1);
 			temp->borrowMedia(returnedC, toString());
 		}
 		break;
@@ -171,6 +176,7 @@ void transactionReturn::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
+			targetD.adjustInventory(1);
 			temp->borrowMedia(returnedD, toString());
 		}
 		break;
@@ -186,6 +192,7 @@ void transactionReturn::processTransaction(HashTable& customers, BinarySearchTre
 		}
 		else
 		{
+			targetF.adjustInventory(1);
 			temp->borrowMedia(returnedF, toString());
 		}
 		break;

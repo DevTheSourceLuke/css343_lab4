@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "DVDClassic.h"
 
 Classic::Classic(void)
@@ -6,6 +6,7 @@ Classic::Classic(void)
 	setGenre('C');
 	majorActor = "";
 	releaseMonth = 0;
+	otherStock = this;
 }
 
 Classic::~Classic(void)
@@ -19,8 +20,9 @@ bool Classic::setData(ifstream & infile)
 
 	infile.ignore(1);
 	infile >> stock;
-	infile.ignore(1);
+	infile.ignore(2);
 	getline(infile, director, ',');
+	infile.ignore(1);
 	getline(infile, title, ',');
 	infile >> first >> last >> month >> year;
 
@@ -38,7 +40,7 @@ bool Classic::setData(ifstream & infile)
 
 void Classic::display(void) const
 {
-	cout << "Movie : " << getTitle() << ", " << getDirector() << ", " << getActor() << ", " << getYear() << ", " << getMonth() << ", " << getInventory() << endl;
+	cout << "Movie : C, "<< getInventory() << ", " << getDirector() << ", " << getTitle() << ", " << getActor() << " " << getMonth() << " " << getYear() << endl;
 }
 
 string Classic::getActor(void) const
@@ -51,9 +53,14 @@ int Classic::getMonth(void) const
 	return releaseMonth;
 }
 
+Classic * Classic::getOtherStock(Classic * dupe)
+{
+	return otherStock;
+}
+
 bool Classic::operator==(const DVD & toCompare) const
 {
-	return (getActor().compare(toCompare.getActor()) != 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
+	return (getActor().compare(toCompare.getActor()) == 0 && getMonth() == toCompare.getMonth() && getYear() == toCompare.getYear());
 }
 
 bool Classic::operator!=(const DVD & toCompare) const

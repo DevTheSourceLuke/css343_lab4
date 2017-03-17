@@ -12,7 +12,7 @@
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef comedy_h
 #define comedy_h
 
@@ -27,7 +27,7 @@ class Comedy : public DVD {
 	~Comedy(void);				//destructor
 
 	bool setData(ifstream& infile);
-
+	virtual void display(void) const;
 
 	//overloaded comparison operators
 	bool operator==(const DVD& toCompare) const;

@@ -10,7 +10,7 @@ This class represents a Transaction affects the store's inventory.
 
 -------------------------------------------------------------------------------------------------*/
 
-#pragma once
+//#pragma once
 #ifndef transactioninventory_h
 #define transactioninventory_h
 
